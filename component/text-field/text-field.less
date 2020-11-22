@@ -1,0 +1,92 @@
+@import "../../theme/mixin.less";
+@import "../../theme/color.less";
+@import "../../theme/animation.less";
+
+/* Normal field */
+
+.field {
+  .normalize();
+  padding: 0px 8px;
+  color: @neutralPrimary;
+  flex: 1 1 0px;
+  min-width: 0px;
+  text-overflow: ellipsis;
+  border: 0;
+  background: none transparent;
+  outline: 0;
+
+  &::placeholder {
+    color: @neutralSecondary;
+    opacity: 1;
+  }
+
+  &[disabled]::placeholder {
+    color: @neutralTertiary;
+  }
+
+  &.hasIcon {
+    padding-right: 24px;
+  }
+
+  &.unresizable {
+    resize: none;
+  }
+}
+
+.icon {
+  user-select: none;
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  top: auto;
+  font-size: 16px;
+  line-height: 18px;
+  color: @neutralPrimary;
+}
+
+.prefix,
+.sufix {
+  background: @neutralLighter;
+  color: @neutralTertiary;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  line-height: 1px;
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  span {
+    padding-bottom: 1px;
+  }
+}
+
+/* Multiline field */
+
+.multiline::v-deep(.fieldGroup) {
+  height: auto;
+  min-height: 60px;
+}
+
+.multiline {
+  &::v-deep(.fieldGroup) {
+    height: auto;
+    min-height: 60px;
+  }
+
+  .field {
+    padding: 6px 8px;
+    min-height: inherit;
+    line-height: 17px;
+    flex-grow: 1;
+    outline: 0;
+    overflow: auto;
+
+    &.hasIcon {
+      padding-right: 40px;
+    }
+  }
+
+  .icon {
+    padding-right: 24px;
+  }
+}

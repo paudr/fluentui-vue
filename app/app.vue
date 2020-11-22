@@ -10,6 +10,7 @@ import Icon from '../component/icon/example'
 import Label from '../component/label/example'
 import Select from '../component/select/example'
 import Spinner from '../component/spinner/example'
+import TextField from '../component/text-field/example'
 
 import UncontrolledCalendar from '../uncontrolled/calendar/example'
 import UncontrolledComboBox from '../uncontrolled/combo-box/example'
@@ -31,7 +32,8 @@ const component = {
   Icon,
   Label,
   Select,
-  Spinner
+  Spinner,
+  TextField
 }
 
 const uncontrolled = {
