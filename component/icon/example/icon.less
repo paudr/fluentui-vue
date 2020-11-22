@@ -1,0 +1,48 @@
+@import "../../../theme/typography.less";
+@import "../../../theme/color.less";
+
+.filter {
+  label {
+    .fontStyleMedium();
+    color: @neutralPrimary;
+    padding-right: 20px;
+  }
+
+  input {
+    .fontStyleMedium();
+    color: @neutralPrimary;
+  }
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px;
+  padding: 5px;
+
+  .icon {
+    font-size: 4em;
+  }
+
+  .label {
+    .fontStyleSmallPlus();
+    background: @neutralLighter;
+    padding: 4px;
+    border-radius: 4px;
+    margin-top: 5px;
+  }
+
+  &:hover {
+    .icon,
+    .label {
+      color: @themePrimary;
+    }
+  }
+}

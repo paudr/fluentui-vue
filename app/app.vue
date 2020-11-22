@@ -1,5 +1,8 @@
 <script>
+import Icon from '../component/icon/example'
+
 const component = {
+  Icon
 }
 
 const uncontrolled = {
