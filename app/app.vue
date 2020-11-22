@@ -22,6 +22,7 @@ import Autofill from '../part/autofill/example'
 import ComboField from '../part/combo-field/example'
 import CommandButton from '../part/command-button/example'
 import InputField from '../part/input-field/example'
+import SplitButton from '../part/split-button/example'
 
 const component = {
   Button,
@@ -50,7 +51,8 @@ const part = {
   Autofill,
   ComboField,
   CommandButton,
-  InputField
+  InputField,
+  SplitButton
 }
 
 export default {
