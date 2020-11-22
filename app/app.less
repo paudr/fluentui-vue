@@ -1,8 +1,63 @@
+@import "../theme/typography.less";
+@import "../theme/color.less";
+
 .app {
   display: grid;
-  grid-template-areas: "title";
+  grid-template-areas: "title title" "controls canvas";
+  grid-template-columns: 150px calc(100% - 150px);
 }
 
 .title {
   grid-area: title;
+  .fontStyleXLargePlus();
+  padding: 0 0 10px 10px;
+  border-bottom: 1px solid @neutralDark;
+}
+
+
+.controls {
+  grid-area: controls;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  border-right: 1px solid @neutralDark;
+}
+
+.canvas {
+  grid-area: canvas;
+  margin: 20px;
+  max-width: 100%;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+
+  div {
+    .fontStyleLarge();
+    color: @themePrimary;
+    margin: 2px 20px 2px 5px;
+  }
+
+  button {
+    margin: 2px 25px 2px 5px;
+    padding: 5px 2px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    outline: 0;
+    background: transparent;
+    .fontStyleMedium();
+    color: @neutralPrimary;
+
+    &:hover {
+      border-color: @neutralDark;
+    }
+
+    &.selected {
+      background-color:  @themePrimary;
+      color: white;
+      font-weight: @fontWeightSemibold;
+    }
+  }
 }
