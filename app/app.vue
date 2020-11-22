@@ -17,6 +17,7 @@ import UncontrolledSelect from '../uncontrolled/select/example'
 
 import Autofill from '../part/autofill/example'
 import ComboField from '../part/combo-field/example'
+import InputField from '../part/input-field/example'
 
 const component = {
   Button,
@@ -40,7 +41,8 @@ const uncontrolled = {
 
 const part = {
   Autofill,
-  ComboField
+  ComboField,
+  InputField
 }
 
 export default {
