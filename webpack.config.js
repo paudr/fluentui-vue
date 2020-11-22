@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const { VueLoaderPlugin } = require('vue-loader')
+const ESLintPlugin = require('eslint-webpack-plugin')
 const packageJson = require('./package.json')
 
 module.exports = () => ({
@@ -51,6 +52,11 @@ module.exports = () => ({
     new VueLoaderPlugin(),
     new webpack.DefinePlugin({
       VERSION: JSON.stringify(packageJson.version)
+    }),
+    new ESLintPlugin({
+      overrideConfigFile: path.resolve('.eslintrc'),
+      context: path.resolve('src'),
+      files: '**/*.{js,vue}'
     })
   ],
   devServer: {
