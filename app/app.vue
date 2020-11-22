@@ -7,6 +7,7 @@ import Label from '../component/label/example'
 import Select from '../component/select/example'
 import Spinner from '../component/spinner/example'
 
+import UncontrolledDropdown from '../uncontrolled/dropdown/example'
 import UncontrolledSelect from '../uncontrolled/select/example'
 
 import ComboField from '../part/combo-field/example'
@@ -22,6 +23,7 @@ const component = {
 }
 
 const uncontrolled = {
+  UncontrolledDropdown,
   UncontrolledSelect
 }
 
