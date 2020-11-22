@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "name": "fluentui-vue",
+  "description": "Vue components inspired in Microsoft's Fluent UI.",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frikeldon/fluentui-vue.git"
+  },
+  "devDependencies": {},
+  "scripts": {}
+}
