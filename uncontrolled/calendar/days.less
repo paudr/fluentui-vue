@@ -1,0 +1,88 @@
+@import "../../theme/typography.less";
+@import "../../theme/color.less";
+
+@calendarDay: 28px;
+
+.days {
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  font-size: inherit;
+  margin-top: 4px;
+  width: 197px;
+}
+
+td {
+  margin: 0;
+  padding: 0;
+}
+
+.day,
+.weekday th {
+  width: @calendarDay;
+  height: @calendarDay;
+  padding: 0;
+  line-height: @calendarDay;
+  .fontStyleSmall();
+  color: @neutralPrimary;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+  outline: transparent;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.day {
+  button {
+    width: 24px;
+    height: 24px;
+    border-radius: 2px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    line-height: 100%;
+    font-size: inherit;
+    color: inherit;
+    font-weight: inherit;
+
+    &:hover {
+      cursor: pointer;
+      background: @neutralLighter;
+      color: @neutralDark;
+    }
+  }
+
+  &:focus,
+  button:focus {
+    border-color: transparent;
+    outline: transparent;
+  }
+
+  &.selected {
+    background-color: @neutralLight;
+    border-radius: 2px;
+  }
+}
+
+.today button,
+.today button:hover {
+  position: relative;
+  color: @white;
+  font-weight: @fontWeightSemibold;
+  background: @themePrimary;
+  border-radius: 100%;
+}
+
+.otherMonth:not(.today) button {
+  color: @neutralSecondary;
+
+  &:hover {
+    background-color: transparent;
+  }
+}

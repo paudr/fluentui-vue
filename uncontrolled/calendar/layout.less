@@ -1,0 +1,101 @@
+@import "../../theme/typography.less";
+@import "../../theme/color.less";
+
+@calendarDay: 28px;
+
+.calendar {
+  display: inline-block;
+  position: relative;
+  background-color: @white;
+
+  &.showGoToday {
+    padding-bottom: 28px;
+  }
+}
+
+.header {
+  position: relative;
+  display: inline-flex;
+  height: @calendarDay;
+  line-height: @calendarDay;
+  width: 100%;
+}
+
+.title {
+  display: inline-flex;
+  flex-grow: 1;
+  .fontStyleMedium();
+  font-weight: @fontWeightSemibold;
+  color: @neutralPrimary;
+  padding: 0 5px;
+
+  > div {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+  }
+
+  > div:hover {
+    color: @black;
+    cursor: pointer;
+  }
+}
+
+.titleComponents {
+  display: inline-flex;
+  align-self: flex-end;
+  overflow: visible;
+}
+
+.prev,
+.next {
+  width: @calendarDay;
+  height: @calendarDay;
+  display: inline-block;
+  text-align: center;
+  line-height: @calendarDay;
+  text-align: center;
+  font-size: @iconFontSizeSmall;
+  color: @neutralPrimary;
+  border-radius: 2px;
+  position: relative;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+
+  &:hover,
+  &:focus {
+    color: @neutralDark;
+    cursor: pointer;
+    outline: 1px solid transparent;
+  }
+}
+
+.goToday {
+  bottom: 0;
+  color: @themePrimary;
+  cursor: pointer;
+  .fontStyleSmall();
+  color: @neutralPrimary;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  background-color: transparent;
+  border: none;
+  position: absolute !important;
+  box-sizing: content-box;
+  right: 13px;
+
+  &:hover {
+    color: @themePrimary;
+    outline: 1px solid transparent;
+  }
+
+  &:active {
+    color: @themeDark;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}

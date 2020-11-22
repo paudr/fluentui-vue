@@ -1,0 +1,28 @@
+@import "../../../theme/typography.less";
+@import "../../../theme/color.less";
+
+.layout {
+  display: grid;
+  grid-template-areas: "canvas props";
+  grid-template-columns: 250px 1fr;
+}
+
+.canvas {
+  grid-area: "canvas";
+  padding: 20px;
+}
+
+.props {
+  grid-area: "props";
+
+  > div {
+    padding: 20px;
+  }
+}
+
+.label {
+  .fontStyleMedium();
+  display: block;
+  color: @neutralPrimary;
+  white-space: nowrap;
+}
