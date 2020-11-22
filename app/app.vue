@@ -9,6 +9,8 @@ import Spinner from '../component/spinner/example'
 
 import UncontrolledSelect from '../uncontrolled/select/example'
 
+import ComboField from '../part/combo-field/example'
+
 const component = {
   Button,
   Checkbox,
@@ -24,6 +26,7 @@ const uncontrolled = {
 }
 
 const part = {
+  ComboField
 }
 
 export default {
