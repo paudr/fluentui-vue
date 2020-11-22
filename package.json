@@ -20,6 +20,7 @@
     "less": "^3.12.2",
     "less-loader": "^7.1.0",
     "vue": "^3.0.2",
+    "vue-docgen-cli": "^4.33.9",
     "vue-loader": "^16.0.0-rc.2",
     "vue-style-loader": "^4.1.2",
     "webpack": "^5.6.0",
@@ -28,6 +29,7 @@
   },
   "scripts": {
     "dev": "npx webpack serve",
+    "docgen": "npx vue-docgen",
     "lint": "npx eslint ./**/*.{js,vue}"
   }
 }
