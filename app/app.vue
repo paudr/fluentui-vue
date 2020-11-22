@@ -1,4 +1,5 @@
 <script>
+import Button from '../component/button/example'
 import Checkbox from '../component/checkbox/example'
 import ChoiceGroup from '../component/choice-group/example'
 import Icon from '../component/icon/example'
@@ -6,6 +7,7 @@ import Label from '../component/label/example'
 import Spinner from '../component/spinner/example'
 
 const component = {
+  Button,
   Checkbox,
   ChoiceGroup,
   Icon,
