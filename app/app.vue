@@ -1,10 +1,12 @@
 <script>
 import Icon from '../component/icon/example'
 import Label from '../component/label/example'
+import Spinner from '../component/spinner/example'
 
 const component = {
   Icon,
-  Label
+  Label,
+  Spinner
 }
 
 const uncontrolled = {
