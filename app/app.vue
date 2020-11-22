@@ -2,6 +2,7 @@
 import Button from '../component/button/example'
 import Checkbox from '../component/checkbox/example'
 import ChoiceGroup from '../component/choice-group/example'
+import Dropdown from '../component/dropdown/example'
 import Icon from '../component/icon/example'
 import Label from '../component/label/example'
 import Select from '../component/select/example'
@@ -16,6 +17,7 @@ const component = {
   Button,
   Checkbox,
   ChoiceGroup,
+  Dropdown,
   Icon,
   Label,
   Select,
