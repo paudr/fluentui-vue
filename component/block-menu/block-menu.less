@@ -1,0 +1,24 @@
+@import "../../theme/color.less";
+
+.blockMenu {
+  display: block;
+  position: absolute;
+  background-color: @white;
+  z-index: 100;
+  min-width: 180px;
+  box-shadow: rgba(0, 0, 0, 0.133) 0px 3.2px 7.2px 0px,
+    rgba(0, 0, 0, 0.11) 0px 0.6px 1.8px 0px;
+
+  ul {
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.childBlockMenu {
+  position: absolute;
+  top: 0px;
+  left: 100%;
+}

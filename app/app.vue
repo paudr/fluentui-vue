@@ -1,4 +1,5 @@
 <script>
+import BlockMenu from '../component/block-menu/example'
 import Button from '../component/button/example'
 import Calendar from '../component/calendar/example'
 import Checkbox from '../component/checkbox/example'
@@ -25,6 +26,7 @@ import InputField from '../part/input-field/example'
 import SplitButton from '../part/split-button/example'
 
 const component = {
+  BlockMenu,
   Button,
   Calendar,
   Checkbox,
