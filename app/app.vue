@@ -1,5 +1,6 @@
 <script>
 import Button from '../component/button/example'
+import Calendar from '../component/calendar/example'
 import Checkbox from '../component/checkbox/example'
 import ChoiceGroup from '../component/choice-group/example'
 import ComboBox from '../component/combo-box/example'
@@ -19,6 +20,7 @@ import ComboField from '../part/combo-field/example'
 
 const component = {
   Button,
+  Calendar,
   Checkbox,
   ChoiceGroup,
   ComboBox,
