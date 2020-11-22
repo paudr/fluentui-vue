@@ -1,0 +1,191 @@
+@import "../../theme/mixin.less";
+@import "../../theme/color.less";
+@import "../../theme/typography.less";
+
+@optionHeight: 36px;
+@transitionDuration: 200ms;
+@transitionTiming: cubic-bezier(0.4, 0, 0.23, 1);
+
+.header {
+  .fontStyleMedium(@weight: @fontWeightSemibold);
+  color: @themePrimary;
+  height: @optionHeight;
+  line-height: @optionHeight;
+  cursor: default;
+  padding: 0px 8px;
+  text-align: left;
+  user-select: none;
+  background: transparent;
+  border: none;
+}
+
+.header > span {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  min-width: 0px;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  margin-top: 1px;
+  margin-right: 1px;
+  margin-bottom: 1px;
+  margin-left: 1px;
+  overflow: hidden;
+}
+
+.header.disabled {
+  color: @neutralTertiary;
+}
+
+.divider {
+  height: 1px;
+  background-color: @neutralLight;
+}
+
+.option {
+  position: relative;
+  display: flex;
+  background-color: transparent;
+  box-sizing: border-box;
+  align-items: center;
+  width: 100%;
+  height: 0px;
+  min-height: @optionHeight;
+  line-height: 20px;
+  overflow-wrap: break-word;
+  border: 0px solid transparent;
+
+  &.highlighted {
+    background-color: @neutralLight;
+
+    &:hover {
+      color: @themeDark;
+      background: @neutralTertiaryAlt;
+    }
+  }
+}
+
+.checkbox {
+  padding: 0px;
+
+  label {
+    .fontStyleMedium();
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    align-self: stretch;
+    padding: 0px;
+    width: 100%;
+    user-select: none;
+    line-height: normal;
+  }
+
+  div {
+    .normalize();
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+    box-sizing: border-box;
+    transition-property: background, border, border-color;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1);
+    margin-right: 4px;
+    border: 1px solid @neutralPrimary;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .icon {
+    opacity: 0;
+    color: @white;
+  }
+
+  &:not(.selected):not(.disabled):hover .icon {
+    color: @neutralSecondary;
+    opacity: 1;
+  }
+
+  span {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    min-width: 0px;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    margin: 1px;
+    overflow: hidden;
+  }
+
+  &.selected {
+    div {
+      background: @themePrimary;
+      border-color: @themePrimary;
+    }
+
+    .icon {
+      opacity: 1;
+    }
+
+    &:not(.disabled):hover div {
+      background: @themeDark;
+      border-color: @themeDark;
+    }
+  }
+
+  &.disabled {
+    label {
+      cursor: default;
+    }
+
+    div {
+      border-color: @neutralTertiaryAlt;
+    }
+
+    span {
+      color: @neutralTertiary;
+    }
+  }
+
+  &.disabled.selected div {
+    background: @neutralTertiaryAlt;
+    border-color: @neutralTertiaryAlt;
+  }
+
+  &.marked::after {
+    .borderCss(@color: @neutralSecondary; @offset: -1px; @radius: 1px);
+  }
+}
+
+.button {
+  .fontStyleMedium();
+  text-align: left;
+  cursor: pointer;
+  padding: 0px 8px;
+  color: @neutralPrimary;
+  user-select: none;
+  outline: transparent;
+  text-decoration: none;
+
+  &:hover,
+  &.selected:hover {
+    color: @themePrimary;
+  }
+
+  &.selected {
+    color: @neutralDark;
+    background-color: @neutralLight;
+  }
+
+  &.disabled {
+    cursor: default;
+    color: @neutralTertiary;
+    pointer-events: none;
+  }
+
+  &.marked::after {
+    .borderCss(@color: @neutralSecondary; @radius: 1px);
+  }
+}

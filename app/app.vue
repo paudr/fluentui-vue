@@ -6,6 +6,8 @@ import Icon from '../component/icon/example'
 import Label from '../component/label/example'
 import Spinner from '../component/spinner/example'
 
+import UncontrolledSelect from '../uncontrolled/select/example'
+
 const component = {
   Button,
   Checkbox,
@@ -16,6 +18,7 @@ const component = {
 }
 
 const uncontrolled = {
+  UncontrolledSelect
 }
 
 const part = {
