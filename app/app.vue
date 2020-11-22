@@ -1,8 +1,10 @@
 <script>
 import Icon from '../component/icon/example'
+import Label from '../component/label/example'
 
 const component = {
-  Icon
+  Icon,
+  Label
 }
 
 const uncontrolled = {
