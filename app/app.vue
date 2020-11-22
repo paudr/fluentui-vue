@@ -20,6 +20,7 @@ import UncontrolledSelect from '../uncontrolled/select/example'
 
 import Autofill from '../part/autofill/example'
 import ComboField from '../part/combo-field/example'
+import CommandButton from '../part/command-button/example'
 import InputField from '../part/input-field/example'
 
 const component = {
@@ -48,6 +49,7 @@ const uncontrolled = {
 const part = {
   Autofill,
   ComboField,
+  CommandButton,
   InputField
 }
 

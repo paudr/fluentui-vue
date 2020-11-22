@@ -1,0 +1,73 @@
+@import "../../theme/mixin.less";
+@import "../../theme/typography.less";
+@import "../../theme/color.less";
+
+button {
+  .fontStyleMedium();
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  padding: 0px 4px 0px 4px;
+  min-width: 40px;
+  background-color: @white;
+  color: @neutralPrimary;
+  height: 100%;
+  user-select: none;
+  outline: transparent;
+  border: 0;
+  text-decoration: none;
+
+  &:hover {
+    background-color: @neutralLighter;
+  }
+
+  &:active {
+    background-color: @neutralLight;
+  }
+
+  > span {
+    display: flex;
+    height: 100%;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.icon {
+  font-size: @iconFontSizeMedium;
+  margin: 0px 4px 0px 4px;
+  line-height: 1em;
+  text-align: center;
+  flex-shrink: 0;
+  color: @themePrimary;
+}
+
+.text {
+  flex-grow: 1;
+  display: block;
+  text-align: left;
+
+  > span {
+    .normalize();
+    .fontStyleMedium();
+    color: @neutralPrimary;
+    box-sizing: border-box;
+    display: block;
+    padding: 5px 0;
+    margin: 0px 4px 0px 4px;
+    line-height: 100%;
+    display: block;
+    white-space: nowrap;
+  }
+}
+
+.expand {
+  font-size: @iconFontSizeSmall;
+  margin: 0px 4px 0px 4px;
+  line-height: 1em;
+  text-align: center;
+  flex-shrink: 0;
+  color: @neutralSecondary;
+}
