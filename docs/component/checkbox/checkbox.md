@@ -1,0 +1,21 @@
+# checkbox
+
+## Props
+
+| Prop name     | Description                                                                                                                                                                                                                                                                                                                                                                                                              | Type    | Values         | Default |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- | -------------- | ------- |
+| modelValue    | Checked state. Mutually exclusive to "indeterminate".                                                                                                                                                                                                                                                                                                                                                                    | boolean | -              | false   |
+| indeterminate | Optional controlled indeterminate visual state for checkbox. Setting indeterminate state takes visual precedence over checked prop given but does not affect checked state. This should not be a toggleable state. On load the checkbox will receive indeterminate visual state and after the first user click it should be removed by your supplied onChange callback function exposing the true state of the checkbox. | boolean | -              | false   |
+| label         | Label to display next to the checkbox.                                                                                                                                                                                                                                                                                                                                                                                   | string  | -              | ''      |
+| boxSide       | Allows you to set the checkbox to be at the before (start) or after (end) the label.                                                                                                                                                                                                                                                                                                                                     | string  | `start`, `end` | 'start' |
+| disabled      | Disabled state of the checkbox.                                                                                                                                                                                                                                                                                                                                                                                          | boolean | -              | false   |
+| readonly      | If true, the checkbox is readonly.                                                                                                                                                                                                                                                                                                                                                                                       | boolean | -              | false   |
+
+## Events
+
+| Event name           | Type      | Description                                                                               |
+| -------------------- | --------- | ----------------------------------------------------------------------------------------- |
+| update:modelValue    | undefined | Raised when an alteration to the CheckBox's value is committed by the user.               |
+| update:indeterminate | undefined | Raised when an alteration to the indeterminate CheckBox's value is committed by the user. |
+
+---
