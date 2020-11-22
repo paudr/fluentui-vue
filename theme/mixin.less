@@ -1,0 +1,34 @@
+.normalize() {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.borderCss (@color; @width: 1px; @offset: 0px; @radius: 2px) {
+  @position: 1px + @offset - @width;
+
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  left: @position;
+  top: @position;
+  bottom: @position;
+  right: @position;
+  border: @width solid @color;
+  border-radius: @radius;
+}
+
+.borderBottomCss (@color; @width: 1px; @offset: 0px; @radius: 2px) {
+  @position: 1px + @offset - @width;
+
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: @position;
+  bottom: @position;
+  right: 0px;
+  border-bottom: @width solid @color;
+  width: 100%;
+}
