@@ -1,0 +1,27 @@
+@import "../../theme/typography.less";
+@import "../../theme/color.less";
+
+.commandBar {
+  .fontStyleMedium();
+  display: flex;
+  background-color: @white;
+  padding: 0px 14px 0px 24px;
+  height: 44px;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.commandBar > div {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+.commandBar > div:first-child {
+  flex-grow: 1;
+}
+
+.commandBar > div:last-child {
+  flex-shrink: 0;
+}

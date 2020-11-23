@@ -5,6 +5,7 @@ import Calendar from '../component/calendar/example'
 import Checkbox from '../component/checkbox/example'
 import ChoiceGroup from '../component/choice-group/example'
 import ComboBox from '../component/combo-box/example'
+import CommandBar from '../component/command-bar/example'
 import DatePicker from '../component/date-picker/example'
 import Dropdown from '../component/dropdown/example'
 import Icon from '../component/icon/example'
@@ -32,6 +33,7 @@ const component = {
   Checkbox,
   ChoiceGroup,
   ComboBox,
+  CommandBar,
   DatePicker,
   Dropdown,
   Icon,

@@ -1,0 +1,13 @@
+@import "../../theme/color.less";
+
+.item {
+  position: relative;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: block;
+  height: 36px;
+
+  .more::v-deep(.icon) {
+    color: @neutralPrimary;
+  }
+}
