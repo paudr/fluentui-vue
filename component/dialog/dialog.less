@@ -1,0 +1,100 @@
+@import "../../theme/typography.less";
+@import "../../theme/color.less";
+
+.dialog {
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 25.6px 57.6px 0px,
+    rgba(0, 0, 0, 0.18) 0px 4.8px 14.4px 0px;
+  background-color: @white;
+  box-sizing: border-box;
+  position: relative;
+  text-align: left;
+  max-height: calc(100% - 32px);
+  border-radius: 2px;
+  outline: transparent solid 3px;
+  overflow-y: auto;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.title {
+  .fontStyleXLarge();
+  color: @neutralPrimary;
+  margin: 0px;
+  min-height: 20px;
+  padding: 16px 46px 20px 24px;
+  line-height: normal;
+}
+
+.largeHeader {
+  border-top: 4px solid @themePrimary;
+
+  .title {
+    color: @themePrimary;
+  }
+}
+
+.topButton {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 15px 15px 0px 0px;
+
+  > button {
+    position: relative;
+    color: @neutralPrimary;
+    flex: 0 0 auto;
+    font-size: 14px;
+    font-weight: 400;
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    padding: 9px;
+    width: 32px;
+    height: 32px;
+    background-color: transparent;
+    user-select: none;
+    outline: transparent;
+    border-style: none;
+    text-decoration: none;
+    border-radius: 2px;
+
+    &:hover,
+    &:active {
+      color: @neutralDark;
+      background-color: @neutralLight;
+    }
+
+    > .icon {
+      display: flex;
+      height: 100%;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.inner {
+  padding: 0px 24px 24px 24px;
+}
+
+.subText {
+  .fontStyleMedium();
+  margin: 0px 0px 24px 0px;
+  color: @neutralSecondary;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+}

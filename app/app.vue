@@ -7,6 +7,7 @@ import ChoiceGroup from '../component/choice-group/example'
 import ComboBox from '../component/combo-box/example'
 import CommandBar from '../component/command-bar/example'
 import DatePicker from '../component/date-picker/example'
+import Dialog from '../component/dialog/example'
 import Dropdown from '../component/dropdown/example'
 import Icon from '../component/icon/example'
 import Label from '../component/label/example'
@@ -37,6 +38,7 @@ const component = {
   ComboBox,
   CommandBar,
   DatePicker,
+  Dialog,
   Dropdown,
   NumberField,
   Label,
