@@ -16,13 +16,11 @@ export default {
   />
 
   <TextField
-    readonly
     label="With an icon"
     icon="Accounts"
   />
 
   <TextField
-    readonly
     label="With placeholder"
     placeholder="Please enter text here"
   />

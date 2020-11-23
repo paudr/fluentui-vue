@@ -49,7 +49,13 @@ export default {
     /** Raised when the value of TextField has been changed. */
     'update:modelValue',
     /** Raised when the user clicks on the icon of TextField. */
-    'click'
+    'click',
+    /** Raised when the user commits a value change to a TextField. */
+    'change',
+    /** Raised when the TextField has received focus */
+    'focus',
+    /** Raised when the TextField has lost focus */
+    'blur'
   ],
   methods: {
     handleTextareaInput (event) {
@@ -114,6 +120,9 @@ export default {
       :readonly="readonly"
       :maxlength="maxlength"
       @input.stop="$emit('update:modelValue', $event.target.value)"
+      @change="$emit('change', $event.target.value)"
+      @focus="$emit('focus')"
+      @blur="$emit('blur')"
     >
 
     <Icon
