@@ -147,9 +147,16 @@ export default {
 
 <template>
   <ComboField
-    v-bind="$props"
     class="datePicker"
     :class="{ notWritable }"
+    :label="label"
+    :description="description"
+    :invalid="invalid"
+    :error-message="errorMessage"
+    :disabled="disabled"
+    :required="required"
+    :borderless="borderless"
+    :underlined="underlined"
     :open="open && !disabled && !readonly"
     @click="$refs.field.focus()"
   >

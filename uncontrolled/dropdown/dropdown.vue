@@ -74,7 +74,14 @@ export default {
 <template>
   <ComboField
     class="dropdown"
-    v-bind="$props"
+    :label="label"
+    :description="description"
+    :invalid="invalid"
+    :error-message="errorMessage"
+    :disabled="disabled"
+    :required="required"
+    :borderless="borderless"
+    :underlined="underlined"
     :open="open && !disabled && !readonly"
     @click="$refs.container.focus()"
   >

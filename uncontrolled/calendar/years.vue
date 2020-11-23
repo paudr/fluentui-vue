@@ -4,11 +4,51 @@ import Layout from './layout'
 export default {
   components: { Layout },
   props: {
+    /** (Unused) The month shown in the calendar. */
+    currentMonth: {
+      type: Number,
+      required: true,
+      validator: month => Number.isInteger(month) &&
+        month >= 0 &&
+        month <= 11
+    },
     /** The year shown in the calendar. */
     currentYear: {
       type: Number,
       required: true,
       validator: month => Number.isInteger(month)
+    },
+    /** (Unused) Localized strings to use in the calendar as a day identifiers. */
+    days: {
+      type: Array,
+      required: true,
+      validator: days => days.length === 7 &&
+        days.every(day => typeof day === 'string')
+    },
+    /** (Unused) Localized strings to use in the calendar as a month identifiers. */
+    months: {
+      type: Array,
+      required: true,
+      validator: months => months.length === 12 &&
+        months.every(month => typeof month === 'string')
+    },
+    /** (Unused) The first day of the week for your locale. */
+    firstDayOfTheWeek: {
+      type: Number,
+      required: true,
+      validator: firstDayOfTheWeek => Number.isInteger(firstDayOfTheWeek) &&
+        firstDayOfTheWeek >= 0 &&
+        firstDayOfTheWeek <= 6
+    },
+    /** (Unused) Value of today. If null, current time in client machine will be used. */
+    today: {
+      type: Date,
+      default: null
+    },
+    /** (Unused) Selected date in the Calendar, if any. */
+    modelValue: {
+      type: Date,
+      default: null
     },
     /** The text in the "Go to today" link shown in the calendar. */
     goToday: {
