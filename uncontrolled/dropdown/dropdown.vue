@@ -56,6 +56,16 @@ export default {
       if (this.open && index in this.options) {
         this.$refs.select.scrollToOption(index)
       }
+    },
+    open (open) {
+      if (open) {
+        const { select } = this.$refs
+        if (this.markedIndex in this.options) {
+          select.scrollToOption(this.markedIndex, true)
+        } else if (select.selectedIndices.length > 0) {
+          select.scrollToOption(select.selectedIndices[0], true)
+        }
+      }
     }
   }
 }

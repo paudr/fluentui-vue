@@ -98,8 +98,13 @@ export default {
       }
     },
     open (open) {
-      if (open && this.suggestedIndex in this.options) {
-        this.$refs.select.scrollToOption(this.suggestedIndex)
+      if (open) {
+        const { select } = this.$refs
+        if (this.suggestedIndex in this.options) {
+          select.scrollToOption(this.suggestedIndex, true)
+        } else if (select.selectedIndices.length > 0) {
+          select.scrollToOption(select.selectedIndices[0], true)
+        }
       }
     }
   }

@@ -31,6 +31,23 @@ export default {
       refItems: []
     }
   },
+  computed: {
+    selectedIndices () {
+      const { multiple, modelValue, options } = this
+      const values = multiple ? modelValue : [modelValue]
+      const selectedIndices = []
+      for (let index = 0; index < options.length; index += 1) {
+        const option = options[index]
+        if (
+          (!option.type || option.type === 'option') &&
+          values.includes(option.value)
+        ) {
+          selectedIndices.push(index)
+        }
+      }
+      return selectedIndices
+    }
+  },
   methods: {
     isValueSelected (value) {
       const currentValue = this.multiple ? this.modelValue : [this.modelValue]
@@ -38,19 +55,23 @@ export default {
         currentValue.length > 0 &&
         currentValue.includes(value)
     },
-    scrollToOption (index) {
+    scrollToOption (index, immediate = false) {
       const item = this.refItems[index]
       if (item) {
         const parent = this.$el
         const element = item.$el
-        const parentBottom = parent.scrollTop
-        const parentTop = parentBottom + parent.getBoundingClientRect().height
-        const elementBottom = element.offsetTop
-        const elementTop = elementBottom + element.getBoundingClientRect().height
-        if (parentBottom > elementBottom) {
-          element.scrollIntoView({ block: 'start', behavior: 'smooth' })
-        } else if (parentTop < elementTop) {
-          element.scrollIntoView({ block: 'end', behavior: 'smooth' })
+        if (immediate) {
+          this.$nextTick(() => (parent.scrollTop = element.offsetTop))
+        } else {
+          const parentBottom = parent.scrollTop
+          const parentTop = parentBottom + parent.getBoundingClientRect().height
+          const elementBottom = element.offsetTop
+          const elementTop = elementBottom + element.getBoundingClientRect().height
+          if (parentBottom > elementBottom) {
+            element.scrollIntoView({ block: 'start', behavior: 'smooth' })
+          } else if (parentTop < elementTop) {
+            element.scrollIntoView({ block: 'end', behavior: 'smooth' })
+          }
         }
       }
     },
