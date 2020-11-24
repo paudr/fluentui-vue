@@ -1,0 +1,133 @@
+@import "../../theme/typography.less";
+@import "../../theme/color.less";
+
+.panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: @white;
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 25.6px 57.6px 0px,
+    rgba(0, 0, 0, 0.18) 0px 4.8px 14.4px 0px;
+}
+
+.extraSmall {
+  width: 272px;
+}
+
+.small {
+  width: 340px;
+}
+
+.medium {
+  width: 592px;
+}
+
+.large {
+  width: 644px;
+}
+
+.extraLarge {
+  width: 940px;
+}
+
+.fluid {
+  width: 100%;
+}
+
+.left {
+  left: 0px;
+  right: auto;
+}
+
+.commands {
+  margin-top: 18px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navigation > button {
+  position: relative;
+  font-size: 20px;
+  font-weight: 400;
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  padding: 0px 4px;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  color: @neutralPrimary;
+  margin-right: 14px;
+  user-select: none;
+  outline: transparent;
+  border-style: none;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+.navigation > button:hover,
+.navigation > button:active {
+  color: @neutralDark;
+  background-color: @neutralLight;
+}
+
+.navigation > button > .icon {
+  display: flex;
+  height: 100%;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  padding: 0px 24px;
+  align-self: flex-start;
+}
+
+.navigation .header {
+  flex-grow: 1;
+}
+
+.header > div {
+  .fontStyleXLarge();
+  color: @neutralPrimary;
+  line-height: 27px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.contentInner {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-y: hidden;
+}
+
+.scrollableContent {
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.content {
+  padding: 0px 24px 20px 24px;
+}
+
+.footer {
+  flex-shrink: 0;
+  border-top: 1px solid transparent;
+  transition: opacity 0.367s cubic-bezier(0.1, 0.25, 0.75, 0.9) 0s;
+}
+
+.footerInner {
+  padding: 16px 24px 16px 24px;
+}

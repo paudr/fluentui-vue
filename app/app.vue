@@ -13,6 +13,7 @@ import Icon from '../component/icon/example'
 import Label from '../component/label/example'
 import NumberField from '../component/number-field/example'
 import Overlay from '../component/overlay/example'
+import Panel from '../component/panel/example'
 import Pivot from '../component/pivot/example'
 import Select from '../component/select/example'
 import Spinner from '../component/spinner/example'
@@ -44,6 +45,7 @@ const component = {
   Label,
   Icon,
   Overlay,
+  Panel,
   Pivot,
   Select,
   Spinner,
