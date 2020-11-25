@@ -29,8 +29,6 @@
 | maximumFractionDigits    | The maximum number of fraction digits to use.                                                                  | number  | -                                        | 20               |
 | minimumSignificantDigits | The maximum number of fraction digits to use.                                                                  | number  | -                                        | 0                |
 | maximumSignificantDigits | The maximum number of significant digits to use.                                                               | number  | -                                        | 0                |
-| max                      | Maximum value                                                                                                  | number  | -                                        | null             |
-| min                      | Minimum value                                                                                                  | number  | -                                        | null             |
 | parse                    | Function for convert string value to a numeric value.                                                          | func    | -                                        | defaultParse     |
 | stringify                | Function for convert numeric value to a string value.                                                          | func    | -                                        | defaultStringify |
 | align                    | Text align when NumberField has no focus<br>values left, center, right                                         | string  | `left`, `center`, `right`                | 'left'           |

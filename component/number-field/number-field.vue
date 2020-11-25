@@ -116,10 +116,6 @@ export default {
       default: 0,
       validator: value => Number.isInteger(value) && value >= 0 && value <= 21
     },
-    /** Maximum value */
-    max: { type: Number, default: null },
-    /** Minimum value */
-    min: { type: Number, default: null },
     /** Function for convert string value to a numeric value. */
     parse: { type: Function, default: defaultParse },
     /** Function for convert numeric value to a string value. */
