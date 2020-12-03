@@ -1,0 +1,125 @@
+@import "../../theme/mixin.less";
+@import "../../theme/color.less";
+@import "../../theme/typography.less";
+
+/* Row */
+
+tr {
+  height: 42px;
+}
+
+.header,
+.data {
+  border-bottom: 1px solid @neutralLight;
+}
+
+.group {
+  border-bottom: 1px solid @white;
+}
+
+.data:hover,
+.group:hover {
+  background: @neutralLighter;
+}
+
+/* Row -> Selected */
+
+.data.selected,
+.group.selected {
+  background: @neutralLight;
+  border-bottom: 1px solid @white;
+}
+
+/* Check */
+
+.checkboxCell {
+  width: 48px;
+
+  > div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    opacity: 0;
+
+    tr:hover > & {
+      opacity: 1;
+    }
+
+    div {
+      line-height: 1;
+      width: 18px;
+      height: 18px;
+      vertical-align: top;
+      position: relative;
+      user-select: none;
+      color: @neutralSecondary;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+        opacity: 1;
+        border-radius: 50%;
+        background: @white;
+      }
+
+      .icon {
+        position: absolute;
+        top: 0px;
+        width: 18px;
+        height: 18px;
+        text-align: center;
+        vertical-align: middle;
+      }
+
+      .circle {
+        font-size: 18px;
+        left: 0px;
+      }
+
+      .checkmark {
+        font-size: 16px;
+        left: 0.5px;
+        opacity: 0;
+      }
+
+      &:hover .checkmark {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/* Check -> selected */
+
+.header.selected .checkboxCell > div,
+.data.selected .checkboxCell > div {
+  opacity: 1;
+}
+
+.selected .checkboxCell > div div {
+  &::before {
+    background: @themePrimary;
+  }
+  .icon {
+    color: @white;
+    opacity: 1;
+  }
+}
+
+/* Compact */
+
+.compact {
+  height: 32px;
+  border-bottom: 0;
+
+  td > div {
+    height: 32px;
+    min-height: 32px;
+  }
+}

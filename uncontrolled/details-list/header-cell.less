@@ -1,0 +1,42 @@
+@import "../../theme/color.less";
+@import "../../theme/typography.less";
+
+th {
+  text-align: left;
+
+  &:hover {
+    background: @neutralLighter;
+  }
+}
+
+div {
+  box-sizing: border-box;
+  min-height: 42px;
+  padding: 0px 8px 0px 12px;
+  margin: 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  outline: 0;
+  cursor: pointer;
+  user-select: none;
+
+  display: flex;
+  .fontStyleMedium(@weight: @fontWeightSemibold);
+
+  .left & {
+    justify-content: flex-start;
+  }
+
+  .center & {
+    justify-content: center;
+  }
+
+  .right & {
+    justify-content: flex-end;
+  }
+}
+
+.icon {
+  padding-left: 4px;
+}

@@ -1,0 +1,28 @@
+@import "../../theme/color.less";
+
+@expanderWidth: 36px;
+
+div {
+  position: relative;
+  color: @neutralSecondary;
+  width: @expanderWidth;
+  display: inline-flex;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.icon {
+  transform-origin: 50% 50%;
+  transform: rotate(0deg);
+  transition: transform 0.1s linear 0s;
+}
+
+.expanded .icon {
+  transform: rotate(90deg);
+}

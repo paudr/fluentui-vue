@@ -1,0 +1,14 @@
+@import "../../theme/typography.less";
+
+th {
+  text-align: left;
+}
+
+.title {
+  display: flex;
+  .fontStyleMedium(@weight: @fontWeightSemibold);
+
+  &.collapsed {
+    font-weight: @fontWeightRegular;
+  }
+}

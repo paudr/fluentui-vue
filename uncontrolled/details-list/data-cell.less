@@ -1,0 +1,28 @@
+@import "../../theme/typography.less";
+
+td {
+  text-align: left;
+}
+
+div {
+  box-sizing: border-box;
+  min-height: 42px;
+  padding: 0px 8px 0px 12px;
+  margin: 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  outline: 0;
+
+  .left & {
+    justify-content: flex-start;
+  }
+
+  .center & {
+    justify-content: center;
+  }
+
+  .right & {
+    justify-content: flex-end;
+  }
+}

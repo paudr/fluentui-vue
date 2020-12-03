@@ -7,6 +7,7 @@ import ChoiceGroup from '../component/choice-group/example'
 import ComboBox from '../component/combo-box/example'
 import CommandBar from '../component/command-bar/example'
 import DatePicker from '../component/date-picker/example'
+import DetailsList from '../component/details-list/example'
 import Dialog from '../component/dialog/example'
 import Dropdown from '../component/dropdown/example'
 import Icon from '../component/icon/example'
@@ -21,6 +22,7 @@ import TextField from '../component/text-field/example'
 
 import UncontrolledCalendar from '../uncontrolled/calendar/example'
 import UncontrolledComboBox from '../uncontrolled/combo-box/example'
+import UncontrolledDetailsList from '../uncontrolled/details-list/example'
 import UncontrolledDropdown from '../uncontrolled/dropdown/example'
 import UncontrolledSelect from '../uncontrolled/select/example'
 
@@ -39,6 +41,7 @@ const component = {
   ComboBox,
   CommandBar,
   DatePicker,
+  DetailsList,
   Dialog,
   Dropdown,
   NumberField,
@@ -55,6 +58,7 @@ const component = {
 const uncontrolled = {
   UncontrolledCalendar,
   UncontrolledComboBox,
+  UncontrolledDetailsList,
   UncontrolledDropdown,
   UncontrolledSelect
 }

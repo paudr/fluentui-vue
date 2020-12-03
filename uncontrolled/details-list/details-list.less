@@ -1,0 +1,29 @@
+@import "../../theme/mixin.less";
+@import "../../theme/color.less";
+@import "../../theme/typography.less";
+
+@expanderWidth: 36px;
+
+table {
+  .normalize();
+  width: 100%;
+  table-layout: fixed;
+  .fontStyleSmall();
+  color: @neutralPrimary;
+  background: @white;
+  border-collapse: collapse;
+  border-color: @neutralLight;
+}
+
+.auto {
+  table-layout: auto;
+}
+
+.full-auto {
+  table-layout: auto;
+  width: auto;
+}
+
+.expanderCell {
+  width: @expanderWidth;
+}
