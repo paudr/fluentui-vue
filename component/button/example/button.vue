@@ -1,9 +1,9 @@
 <script>
-import Button from '../button'
+import Control from '../button'
 import Checkbox from '../../checkbox'
 
 export default {
-  components: { Button, Checkbox },
+  components: { Control, Checkbox },
   data () {
     return {
       primary: false,
@@ -31,7 +31,7 @@ export default {
   <div class="examples">
     <span>Standard</span>
     <div>
-      <Button
+      <Control
         text="Standard"
         :primary="primary"
         :checked="checked"
@@ -41,7 +41,7 @@ export default {
 
     <span>Compound</span>
     <div>
-      <Button
+      <Control
         type="compound"
         text="Compound"
         secondary-text="This is the secondary text."
@@ -53,7 +53,7 @@ export default {
 
     <span>Command</span>
     <div>
-      <Button
+      <Control
         type="command"
         text="New Item"
         icon="Add"
@@ -65,7 +65,7 @@ export default {
 
     <span>Icon</span>
     <div>
-      <Button
+      <Control
         type="icon"
         icon="Emoji2"
         :primary="primary"
@@ -76,7 +76,7 @@ export default {
 
     <span>Action</span>
     <div>
-      <Button
+      <Control
         type="action"
         text="Create account"
         icon="AddFriend"

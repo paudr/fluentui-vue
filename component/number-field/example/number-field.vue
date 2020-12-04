@@ -1,9 +1,9 @@
 <script>
-import NumberField from '../number-field'
+import Control from '../number-field'
 import ChoiceGroup from '../../choice-group'
 
 export default {
-  components: { NumberField, ChoiceGroup },
+  components: { Control, ChoiceGroup },
   data () {
     return {
       alignments: [
@@ -32,7 +32,7 @@ export default {
     :options="alignments"
     v-model="alignFocus"
   />
-  <NumberField
+  <Control
     use-grouping
     :align="align"
     :align-focus="alignFocus"

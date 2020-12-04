@@ -1,64 +1,64 @@
 <script>
-import TextField from '../text-field'
+import Control from '../text-field'
 
 export default {
-  components: { TextField }
+  components: { Control }
 }
 </script>
 
 <template>
-  <TextField label="I'm a field" />
+  <Control label="I'm a field" />
 
-  <TextField
+  <Control
     readonly
     label="Readonly"
     model-value="I am read-only"
   />
 
-  <TextField
+  <Control
     label="With an icon"
     icon="Accounts"
   />
 
-  <TextField
+  <Control
     label="With placeholder"
     placeholder="Please enter text here"
   />
 
-  <TextField
+  <Control
     label="With prefix"
     prefix="Address:"
   />
 
-  <TextField
+  <Control
     label="With sufix"
     sufix="cm"
   />
 
-  <TextField
+  <Control
     label="With prefix and sufix"
     prefix="http"
     sufix=".com"
   />
 
-  <TextField
+  <Control
     multiline
     label="Multiline"
   />
 
-  <TextField
+  <Control
     multiline
     label="Multiline with icon"
     icon="Edit"
   />
 
-  <TextField
+  <Control
     multiline
     unresizable
     label="Multiline non-resizable"
   />
 
-  <TextField
+  <Control
     multiline
     auto-adjust-height
     label="Multiline with auto adjusting height"

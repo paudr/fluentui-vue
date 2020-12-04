@@ -1,5 +1,5 @@
 <script>
-import BlockMenu from '../block-menu'
+import Control from '../block-menu'
 import TextField from '../../text-field'
 
 const menu = [
@@ -93,7 +93,7 @@ const menu = [
 ]
 
 export default {
-  components: { BlockMenu, TextField },
+  components: { Control, TextField },
   data () {
     return {
       menu,
@@ -118,7 +118,7 @@ export default {
     label="Mouse stop delay"
     v-model="mousestopDelayText"
   />
-  <BlockMenu
+  <Control
     :items="menu"
     :mousestop-delay="mousestopDelay"
   />

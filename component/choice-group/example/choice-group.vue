@@ -1,8 +1,8 @@
 <script>
-import ChoiceGroup from '../choice-group'
+import Control from '../choice-group'
 
 export default {
-  components: { ChoiceGroup },
+  components: { Control },
   data () {
     return {
       options: [
@@ -21,14 +21,14 @@ export default {
 </script>
 
 <template>
-  <ChoiceGroup
+  <Control
     class="choiceGroup"
     label="Choice Group"
     :options="options"
     v-model="value1"
   />
 
-  <ChoiceGroup
+  <Control
     class="choiceGroup"
     disabled
     label="Disabled choice Group"
@@ -36,7 +36,7 @@ export default {
     v-model="value2"
   />
 
-  <ChoiceGroup
+  <Control
     class="choiceGroup"
     readonly
     label="Readonly choice Group"
@@ -44,7 +44,7 @@ export default {
     v-model="value3"
   />
 
-  <ChoiceGroup
+  <Control
     class="choiceGroup"
     in-row
     label="Choice Group in row"

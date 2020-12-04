@@ -1,9 +1,9 @@
 <script>
-import DatePicker from '../date-picker'
+import Control from '../date-picker'
 import Checkbox from '../../checkbox'
 
 export default {
-  components: { DatePicker, Checkbox },
+  components: { Control, Checkbox },
   data () {
     return {
       textValue: '',
@@ -41,7 +41,7 @@ export default {
 <template>
   <div class="layout">
     <div class="canvas">
-      <DatePicker
+      <Control
         label="DatePicker"
         :today="today"
         :go-today="goToday"

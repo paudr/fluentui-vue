@@ -1,5 +1,5 @@
 <script>
-import Calendar from '../calendar'
+import Control from '../calendar'
 import ChoiceGroup from '../../../component/choice-group'
 
 const daysData = ['d', 'l', 'm', 'x', 'j', 'v', 's']
@@ -22,7 +22,7 @@ const monthsData = [
 const padZero = (num, length = 2) => num.toString().padStart(length, '0')
 
 export default {
-  components: { Calendar, ChoiceGroup },
+  components: { Control, ChoiceGroup },
   data () {
     const today = new Date()
     return {
@@ -95,7 +95,7 @@ export default {
 <template>
   <div class="layout">
     <div class="canvas">
-      <Calendar
+      <Control
         :days="daysData"
         :months="monthsData"
         :first-day-of-the-week="firstDayOfTheWeek"

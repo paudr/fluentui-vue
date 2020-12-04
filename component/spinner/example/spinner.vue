@@ -1,35 +1,35 @@
 <script>
-import Spinner from '../spinner'
+import Control from '../spinner'
 
 export default {
-  components: { Spinner }
+  components: { Control }
 }
 </script>
 <template>
   <div class="root">
     <label>Extra small spinner</label>
     <div>
-      <Spinner size="xSmall" />
+      <Control size="xSmall" />
     </div>
 
     <label>Small spinner</label>
     <div>
-      <Spinner size="small" />
+      <Control size="small" />
     </div>
 
     <label>Medium spinner</label>
     <div>
-      <Spinner size="medium" />
+      <Control size="medium" />
     </div>
 
     <label>Large spinner</label>
     <div>
-      <Spinner size="large" />
+      <Control size="large" />
     </div>
 
     <label>With text</label>
     <div>
-      <Spinner label="I am loading..." />
+      <Control label="I am loading..." />
     </div>
   </div>
 </template>

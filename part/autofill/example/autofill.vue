@@ -1,9 +1,9 @@
 <script>
-import Autofill from '..//autofill'
+import Control from '../autofill'
 import Checkbox from '../../../component/checkbox'
 
 export default {
-  components: { Autofill, Checkbox },
+  components: { Control, Checkbox },
   data () {
     return {
       readonly: false,
@@ -21,7 +21,7 @@ export default {
 <template>
   <div class="layout">
     <div class="canvas">
-      <Autofill
+      <Control
         class="field"
         :placeholder="placeholder"
         :readonly="readonly"

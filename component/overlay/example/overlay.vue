@@ -1,9 +1,9 @@
 <script>
-import Overlay from '../overlay'
+import Control from '../overlay'
 import Button from '../../button'
 
 export default {
-  components: { Overlay, Button },
+  components: { Control, Button },
   data () {
     return {
       visible: false,
@@ -30,27 +30,27 @@ export default {
     v-if="visible"
     to="body"
   >
-    <Overlay
+    <Control
       fixed
       class="overlay"
       @click="visible = false"
     >
       <span>I'm a notification!</span>
-    </Overlay>
+    </Control>
   </teleport>
 
   <teleport
     v-if="visibleDark"
     to="body"
   >
-    <Overlay
+    <Control
       fixed
       dark
       class="overlay"
       @click="visibleDark = false"
     >
       <span>I'm a notification!</span>
-    </Overlay>
+    </Control>
   </teleport>
 </template>
 

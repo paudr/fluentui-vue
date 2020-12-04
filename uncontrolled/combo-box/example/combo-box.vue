@@ -1,5 +1,5 @@
 <script>
-import ComboBox from '../combo-box'
+import Control from '../combo-box'
 import Checkbox from '../../../component/checkbox'
 import ChoiceGroup from '../../../component/choice-group'
 
@@ -67,7 +67,7 @@ const accent = [
 ]
 
 export default {
-  components: { ComboBox, Checkbox, ChoiceGroup },
+  components: { Control, Checkbox, ChoiceGroup },
   data () {
     return {
       open: false,
@@ -120,7 +120,7 @@ export default {
 <template>
   <div class="layout">
     <div class="canvas">
-      <ComboBox
+      <Control
         label="ComboBox"
         :options="selectedOptions"
         :multiple="multiple"

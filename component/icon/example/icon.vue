@@ -1,9 +1,9 @@
 <script>
-import Icon from '../icon'
+import Control from '../icon'
 import code from '../code'
 
 export default {
-  components: { Icon },
+  components: { Control },
   data () {
     return {
       names: Object.keys(code),
@@ -32,7 +32,7 @@ export default {
       :key="name"
       class="element"
     >
-      <Icon
+      <Control
         class="icon"
         :name="name"
       />

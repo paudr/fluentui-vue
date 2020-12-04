@@ -1,11 +1,11 @@
 <script>
-import Dialog from '../dialog'
+import Control from '../dialog'
 import Overlay from '../../overlay'
 import Button from '../../button'
 import ChoiceGroup from '../../choice-group'
 
 export default {
-  components: { Dialog, Overlay, Button, ChoiceGroup },
+  components: { Control, Overlay, Button, ChoiceGroup },
   data () {
     return {
       showDialog1: false,
@@ -39,7 +39,7 @@ export default {
     class="overlay"
     @click="showDialog1 = false"
   >
-    <Dialog
+    <Control
       header="Missing Subject"
       text="Do you want to send this message without a subject?"
       style="max-width: 400px;"
@@ -52,7 +52,7 @@ export default {
     class="overlay"
     @click="showDialog2 = false"
   >
-    <Dialog
+    <Control
       header="All emails together"
       type="largeHeader"
       text="Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails."
@@ -76,14 +76,14 @@ export default {
           <Button text="Cancel" />
         </div>
       </template>
-    </Dialog>
+    </Control>
   </Overlay>
 
   <Overlay
     v-if="showDialog3"
     class="overlay"
   >
-    <Dialog
+    <Control
       type="close"
       header="Missing Subject"
       text="Do you want to send this message without a subject?"

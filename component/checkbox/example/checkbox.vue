@@ -1,8 +1,8 @@
 <script>
-import Checkbox from '../checkbox'
+import Control from '../checkbox'
 
 export default {
-  components: { Checkbox },
+  components: { Control },
   data () {
     return {
       value1: false,
@@ -21,26 +21,26 @@ export default {
 }
 </script>
 <template>
-  <Checkbox
+  <Control
     class="checkbox"
     label="Unchecked checkbox"
     v-model="value1"
   />
 
-  <Checkbox
+  <Control
     class="checkbox"
     label="Checked checkbox"
     v-model="value2"
   />
 
-  <Checkbox
+  <Control
     class="checkbox"
     label="Disabled checkbox"
     disabled
     v-model="value3"
   />
 
-  <Checkbox
+  <Control
     class="checkbox"
     label="Disabled checked checkbox"
     disabled
@@ -48,21 +48,21 @@ export default {
     v-model="value4"
   />
 
-  <Checkbox
+  <Control
     class="checkbox"
     label="Indeterminate checkbox"
     v-model="value5"
     v-model:indeterminate="indeterminate5"
   />
 
-  <Checkbox
+  <Control
     class="checkbox"
     label="Indeterminate checkbox init to false"
     v-model="value6"
     v-model:indeterminate="indeterminate6"
   />
 
-  <Checkbox
+  <Control
     class="checkbox"
     label="Indeterminate disabled checkbox"
     indeterminate
@@ -70,14 +70,14 @@ export default {
     v-model="value7"
   />
 
-  <Checkbox
+  <Control
     class="checkbox"
     label="Readonly checkbox"
     readonly
     v-model="value8"
   />
 
-  <Checkbox
+  <Control
     class="checkbox"
     label="Checkbox after de label"
     box-side="end"

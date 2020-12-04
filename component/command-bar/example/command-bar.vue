@@ -1,5 +1,5 @@
 <script>
-import CommanBar from '../command-bar'
+import Control from '../command-bar'
 import Checkbox from '../../checkbox'
 import TextField from '../../text-field'
 
@@ -117,7 +117,7 @@ const farItems = [
 ]
 
 export default {
-  components: { CommanBar, Checkbox, TextField },
+  components: { Control, Checkbox, TextField },
   data () {
     return {
       menu,
@@ -149,7 +149,7 @@ export default {
     label="Mouse stop delay"
     v-model="mousestopDelayText"
   />
-  <CommanBar
+  <Control
     :items="menu"
     :overflow-items="overflowItems"
     :far-items="farItems"

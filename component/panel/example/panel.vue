@@ -1,5 +1,5 @@
 <script>
-import Panel from '../panel'
+import Control from '../panel'
 import Overlay from '../../overlay'
 import Button from '../../button'
 import Checkbox from '../../checkbox'
@@ -7,7 +7,7 @@ import Dropdown from '../../dropdown'
 import ChoiceGroup from '../../choice-group'
 
 export default {
-  components: { Panel, Overlay, Button, Checkbox, Dropdown, ChoiceGroup },
+  components: { Control, Overlay, Button, Checkbox, Dropdown, ChoiceGroup },
   data () {
     return {
       showPanel: false,
@@ -57,7 +57,7 @@ export default {
     class="overlay"
     @click="showPanel = false"
   >
-    <Panel
+    <Control
       header-text="Missing Subject"
       :type="type"
       :left="left"
@@ -82,7 +82,7 @@ export default {
           <Button text="Cancel" />
         </div>
       </template>
-    </Panel>
+    </Control>
   </Overlay>
 </template>
 

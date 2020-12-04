@@ -1,5 +1,5 @@
 <script>
-import Calendar from '../calendar'
+import Control from '../calendar'
 
 const daysData = ['d', 'l', 'm', 'x', 'j', 'v', 's']
 
@@ -21,7 +21,7 @@ const monthsData = [
 const padZero = (num, length = 2) => num.toString().padStart(length, '0')
 
 export default {
-  components: { Calendar },
+  components: { Control },
   data () {
     return {
       daysData,
@@ -74,7 +74,7 @@ export default {
 <template>
   <div class="layout">
     <div class="canvas">
-      <Calendar
+      <Control
         :days="daysData"
         :months="monthsData"
         :first-day-of-the-week="firstDayOfTheWeek"

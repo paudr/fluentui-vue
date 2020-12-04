@@ -1,11 +1,11 @@
 <script>
-import DetailsList from '../details-list'
+import Control from '../details-list'
 import ChoiceGroup from '../../../component/choice-group'
 import Checkbox from '../../../component/checkbox'
 import Dropdown from '../../../component/dropdown'
 
 export default {
-  components: { DetailsList, ChoiceGroup, Checkbox, Dropdown },
+  components: { Control, ChoiceGroup, Checkbox, Dropdown },
   data () {
     return {
       sampleData: {
@@ -114,7 +114,7 @@ export default {
     />
   </div>
   <div>
-    <DetailsList
+    <Control
       :columns="currentData.columns"
       :groups="currentData.groups"
       :data="currentData.data"

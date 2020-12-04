@@ -1,5 +1,5 @@
 <script>
-import Pivot from '../pivot'
+import Control from '../pivot'
 
 const fullTabs = [
   { text: 'My files', value: 'files', icon: 'Emoji2', count: 42 },
@@ -19,7 +19,7 @@ const withIconsTabs = fullTabs.map(tab => ({
 }))
 
 export default {
-  components: { Pivot },
+  components: { Control },
   data () {
     return {
       fullTabs,
@@ -39,7 +39,7 @@ export default {
 <template>
   <div class="example">
     <span>Standard</span>
-    <Pivot
+    <Control
       :tabs="fullTabs"
       v-model="selectedTab1"
     />
@@ -47,7 +47,7 @@ export default {
 
   <div class="example">
     <span>Only text</span>
-    <Pivot
+    <Control
       :tabs="onlyTextTabs"
       v-model="selectedTab2"
     />
@@ -55,7 +55,7 @@ export default {
 
   <div class="example">
     <span>With icons</span>
-    <Pivot
+    <Control
       :tabs="withIconsTabs"
       v-model="selectedTab3"
     />
@@ -63,7 +63,7 @@ export default {
 
   <div class="example">
     <span>Large tabs</span>
-    <Pivot
+    <Control
       large
       :tabs="withIconsTabs"
       v-model="selectedTab4"
@@ -72,7 +72,7 @@ export default {
 
   <div class="example">
     <span>With tab style</span>
-    <Pivot
+    <Control
       tab-style
       :tabs="withIconsTabs"
       v-model="selectedTab5"
@@ -81,7 +81,7 @@ export default {
 
   <div class="example">
     <span>Large with tab style</span>
-    <Pivot
+    <Control
       large
       tab-style
       :tabs="withIconsTabs"

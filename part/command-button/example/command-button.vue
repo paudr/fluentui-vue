@@ -1,5 +1,5 @@
 <script>
-import CommandButton from '../command-button'
+import Control from '../command-button'
 import Checkbox from '../../../component/checkbox'
 import Dropdown from '../../../component/dropdown'
 import TextField from '../../../component/text-field'
@@ -11,7 +11,7 @@ const iconOptions = [
 ]
 
 export default {
-  components: { CommandButton, Checkbox, Dropdown, TextField },
+  components: { Control, Checkbox, Dropdown, TextField },
   data () {
     return {
       iconOptions,
@@ -29,7 +29,7 @@ export default {
   <div class="layout">
     <div class="canvas">
       <div>
-        <CommandButton
+        <Control
           class="field"
           :text="text"
           :icon="icon"

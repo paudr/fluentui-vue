@@ -1,18 +1,22 @@
 <script>
-import Label from '../label'
+import Control from '../label'
 
 export default {
-  components: { Label }
+  components: { Control }
 }
 </script>
 <template>
-  <Label>I'm a Label</Label>
+  <Control>I'm a Label</Control>
 
-  <Label disabled>I'm a disabled Label</Label>
+  <Control disabled>
+    I'm a disabled Label
+  </Control>
 
-  <Label required>I'm a required Label</Label>
+  <Control required>
+    I'm a required Label
+  </Control>
 
-  <Label
+  <Control
     required
     disabled
     v-text="'I\'m a required and disabled Label'"

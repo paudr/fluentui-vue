@@ -1,5 +1,5 @@
 <script>
-import Select from '../select'
+import Control from '../select'
 import Checkbox from '../../../component/checkbox'
 import ChoiceGroup from '../../../component/choice-group'
 
@@ -27,7 +27,7 @@ const vegetables = [
 ]
 
 export default {
-  components: { Select, Checkbox, ChoiceGroup },
+  components: { Control, Checkbox, ChoiceGroup },
   data () {
     return {
       options,
@@ -77,7 +77,7 @@ export default {
 <template>
   <div class="layout">
     <div class="canvas">
-      <Select
+      <Control
         class="select"
         :options="selectedOptions"
         :multiple="multiple"
