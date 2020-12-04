@@ -60,6 +60,12 @@ export default {
           data: Array(1000)
             .fill(0)
             .map((_, i) => [`Item ${i}`, i.toString()])
+        },
+        noGroups: {
+          columns: [{ title: 'Name' }, { title: 'Value' }],
+          data: Array(1000)
+            .fill(0)
+            .map((_, i) => [`Item ${i}`, i.toString()])
         }
       },
       selectedData: 'numbers',
@@ -93,7 +99,8 @@ export default {
       label="Data"
       :options="[
         { text: 'Colors', value: 'colors' },
-        { text: 'Numbers', value: 'numbers' }
+        { text: 'Numbers', value: 'numbers' },
+        { text: 'No groups', value: 'noGroups' }
       ]"
       v-model="selectedData"
     />

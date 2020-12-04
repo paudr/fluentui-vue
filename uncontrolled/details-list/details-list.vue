@@ -147,7 +147,7 @@ export default {
         />
       </DetailsRow>
     </thead>
-    <template v-if="groups">
+    <template v-if="groups && groups.length > 0">
       <template
         v-for="(group, index) in groups"
         :key="index"
@@ -181,7 +181,7 @@ export default {
     <DataList
       v-else
       :columns="columns"
-      :data="dataGroup.data"
+      :data="data"
       :start-index="0"
       :count="data.length"
       :selection="selection"
