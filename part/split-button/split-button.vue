@@ -15,7 +15,9 @@ export default {
     /** The name of the expand icon to use from the icon font. */
     expandIcon: { type: String, default: '' },
     /** Time in milliseconds that the mouse must be over the button to trigger the mousestop event. */
-    mousestopDelay: { type: Number, default: 800 }
+    mousestopDelay: { type: Number, default: 800 },
+    /** Disabled state of the associated button. */
+    disabled: { type: Boolean, default: false }
   },
   emits: [
     /** Raised when the user clicks on the element. */
@@ -40,6 +42,7 @@ export default {
         :icon-space="iconSpace"
         :icon-color="iconColor"
         :mousestop-delay="mousestopDelay"
+        :disabled="disabled"
         @click="$emit('click')"
         @mousestop="$emit('mousestop')"
       />
@@ -47,6 +50,7 @@ export default {
         class="expand"
         :expand-icon="expandIcon"
         :mousestop-delay="mousestopDelay"
+        :disabled="disabled"
         @click="$emit('click-expand')"
         @click-expand="$emit('click-expand')"
         @mousestop="$emit('mousestop-expand')"

@@ -71,3 +71,18 @@ button {
   flex-shrink: 0;
   color: @neutralSecondary;
 }
+
+button[disabled] {
+  &,
+  &:active,
+  &:hover {
+    cursor: default;
+    background-color: @neutralLighter;
+    color: @neutralTertiary;
+    border-color: @neutralLighter;
+  }
+
+  .icon, .expand, .text > span {
+    color: @neutralTertiaryAlt;
+  }
+}

@@ -54,7 +54,8 @@ const menu = [
       {
         value: 'print',
         text: 'Print',
-        icon: 'Print'
+        icon: 'Print',
+        disabled: true
       },
       {
         value: 'bing',

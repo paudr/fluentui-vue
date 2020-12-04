@@ -125,6 +125,9 @@ export default {
     },
     autoupdateOverflowRate () {
       this.createObserver()
+    },
+    items (value) {
+      this.overflowIndex = value.length
     }
   },
   mounted () {
@@ -154,6 +157,7 @@ export default {
         :has-action="typeof item.action === 'function'"
         :has-childs="item.childs && item.childs.length > 0"
         :mousestop-delay="mousestopDelay"
+        :disabled="item.disabled"
         @click="handleClick(index)"
         @click-expand="expanded = index"
         @mousestop="expanded = index"
@@ -172,6 +176,7 @@ export default {
         :text="item.text"
         :icon="item.icon"
         :icon-color="item.iconColor"
+        :disabled="item.disabled"
       />
       <div />
     </div>

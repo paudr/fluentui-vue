@@ -19,7 +19,8 @@ export default {
       icon: 'Add',
       iconColor: '',
       iconSpace: '',
-      expandIcon: 'ChevronDown'
+      expandIcon: 'ChevronDown',
+      disabled: false
     }
   }
 }
@@ -36,6 +37,7 @@ export default {
           :icon-color="iconColor"
           :icon-space="iconSpace"
           :expand-icon="expandIcon"
+          :disabled="disabled"
         />
       </div>
     </div>
@@ -70,6 +72,12 @@ export default {
           label="Expand icon"
           :options="iconOptions"
           v-model="expandIcon"
+        />
+      </div>
+      <div>
+        <Checkbox
+          label="Disabled"
+          v-model="disabled"
         />
       </div>
     </div>

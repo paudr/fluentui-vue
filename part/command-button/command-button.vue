@@ -15,7 +15,9 @@ export default {
     /** The name of the icon to use from the icon font. */
     expandIcon: { type: String, default: '' },
     /** Time in milliseconds that the mouse must be over the button to trigger the mousestop event. */
-    mousestopDelay: { type: Number, default: 800 }
+    mousestopDelay: { type: Number, default: 800 },
+    /** Disabled state of the associated button. */
+    disabled: { type: Boolean, default: false }
   },
   emits: [
     /** Raised when the user clicks on the element. */
@@ -28,11 +30,15 @@ export default {
   methods: {
     handleClick () {
       this.clearMouseHandler()
-      this.$emit('click')
+      if (!this.disabled) {
+        this.$emit('click')
+      }
     },
     handleExpandClick () {
       this.clearMouseHandler()
-      this.$emit('click-expand')
+      if (!this.disabled) {
+        this.$emit('click-expand')
+      }
     },
     handleMouseover () {
       this.mouseHandler = setTimeout(() => this.$emit('mousestop'), this.mousestopDelay)
@@ -49,6 +55,7 @@ export default {
 
 <template>
   <button
+    :disabled="disabled"
     @click.stop="handleClick"
     @mouseover.stop="handleMouseover"
     @mouseout.stop="clearMouseHandler"

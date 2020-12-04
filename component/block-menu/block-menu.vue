@@ -54,6 +54,7 @@ export default {
         :has-action="typeof item.action === 'function'"
         :has-childs="item.childs && item.childs.length > 0"
         :mousestop-delay="mousestopDelay"
+        :disabled="item.disabled"
         @click="handleClick(index)"
         @click-expand="expanded = index"
         @mousestop="expanded = index"

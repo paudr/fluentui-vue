@@ -28,8 +28,9 @@ export default {
     /** Whether the button must to reserve a space for Icon. */
     iconSpace: { type: Boolean, default: false },
     /** Time in milliseconds that the mouse must be over the item to trigger the mousestop event. */
-    mousestopDelay: { type: Number, default: 800 }
-
+    mousestopDelay: { type: Number, default: 800 },
+    /** Disabled state of the associated item. */
+    disabled: { type: Boolean, default: false }
   },
   emits: [
     /** Raised when the user clicks on the element. */
@@ -54,6 +55,7 @@ export default {
       :icon-color="iconColor"
       :icon-space="iconSpace"
       :mousestop-delay="mousestopDelay"
+      :disabled="disabled"
       expand-icon="ChevronRight"
       @click="$emit('click')"
       @click-expand="$emit('click-expand')"
@@ -69,6 +71,7 @@ export default {
       :icon-space="iconSpace"
       :mousestop-delay="mousestopDelay"
       :expand-icon="hasChilds ? 'ChevronRight' : ''"
+      :disabled="disabled"
       @click="$emit('click')"
       @click-expand="$emit('click-expand')"
       @mousestop="$emit('mousestop')"
