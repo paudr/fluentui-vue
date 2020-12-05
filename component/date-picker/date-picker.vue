@@ -139,7 +139,7 @@ export default {
   },
   watch: {
     modelValue (value) {
-      this.fieldValue = this.stringify(value)
+      this.fieldValue = value ? this.stringify(value) : ''
     }
   }
 }
