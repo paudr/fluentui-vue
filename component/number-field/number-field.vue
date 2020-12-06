@@ -148,10 +148,20 @@ export default {
   data () {
     return {
       hasFocus: false,
-      editValue: ''
+      numberValue: this.modelValue
     }
   },
   computed: {
+    textValue () {
+      const { hasFocus, numberValue } = this
+      if (hasFocus) {
+        return typeof numberValue === 'number' && !isNaN(numberValue)
+          ? String(numberValue)
+          : ''
+      } else {
+        return this.stringify(numberValue)
+      }
+    },
     textAlign () {
       const { hasFocus, align, alignFocus } = this
       return hasFocus
@@ -160,38 +170,19 @@ export default {
     }
   },
   methods: {
-    handleChange (value) {
-      const number = this.parse(value)
-      if (isNaN(number) && typeof this.modelValue === 'number') {
-        this.$emit('update:modelValue', null)
-      } else if (number !== this.modelValue) {
-        this.$emit('update:modelValue', number)
+    handleUpdateModelValue (value) {
+      if (!isNaN(value)) {
+        this.numberValue = value ? parseFloat(value) : ''
+        this.$emit('update:modelValue', this.numberValue)
+      } else {
+        this.$refs.textField.$refs.field.value = this.textValue
       }
     },
     handleFocus () {
       this.hasFocus = true
-      this.editValue = ''
-      if (typeof this.modelValue === 'number') {
-        this.editValue = String(this.modelValue)
-      }
-      this.$nextTick(() => {
-        const { field } = this.$refs.textField.$refs
-        field.setSelectionRange(0, field.value.length)
-      })
     },
     handleBlur () {
       this.hasFocus = false
-      this.editValue = ''
-      if (typeof this.modelValue === 'number') {
-        this.editValue = this.stringify(this.modelValue)
-      }
-    }
-  },
-  watch: {
-    modelValue (value) {
-      this.editValue = this.hasFocus
-        ? String(this.modelValue)
-        : this.stringify(this.modelValue)
     }
   }
 }
@@ -218,9 +209,9 @@ export default {
     :maxlength="maxlength"
     :unresizable="unresizable"
     :auto-adjust-height="autoAdjustHeight"
-    :model-value="editValue"
+    :model-value="textValue"
+    @update:modelValue="handleUpdateModelValue"
     @click="$emit('click')"
-    @change="handleChange"
     @focus="handleFocus"
     @blur="handleBlur"
   />
