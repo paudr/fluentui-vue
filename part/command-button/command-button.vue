@@ -64,7 +64,7 @@ export default {
       <Icon
         v-if="iconSpace || icon"
         class="icon"
-        :style="{ color: iconColor }"
+        :style="{ color: disabled ? '' : iconColor }"
         :name="icon"
         @click="handleClick"
       />
