@@ -93,7 +93,6 @@ export default {
       }
     },
     handleUpdateValue (value) {
-      this.$emit('update:modelValue', value)
       this.markedIndex = -1
       if (!this.multiple) {
         this.open = false
@@ -112,6 +111,6 @@ export default {
     :marked-index="markedIndex"
     @keydown="handleKeydown"
     @click="handleClick"
-    @update:model-value="handleUpdateValue"
+    @update:modelValue="handleUpdateValue"
   />
 </template>

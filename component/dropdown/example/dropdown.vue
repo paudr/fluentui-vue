@@ -64,6 +64,12 @@ export default {
         }
       }
     }
+  },
+  methods: {
+    updateModelValue (value) {
+      this.value = value
+      console.log(`@update:modelValue="${value}"`)
+    }
   }
 }
 </script>
@@ -79,7 +85,8 @@ export default {
         :disabled="disabled"
         :readonly="readonly"
         :open="open"
-        v-model="value"
+        :model-value="value"
+        @update:modelValue="updateModelValue"
         @click="open = !open"
       />
     </div>
