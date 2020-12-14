@@ -121,7 +121,15 @@ export default {
 <template>
   <UncontrolledDetailsList
     ref="detailsList"
-    v-bind="$props"
+    :columns="columns"
+    :data="data"
+    :groups="groups"
+    :selected-indices="selectedIndices"
+    :auto="auto"
+    :full-auto="fullAuto"
+    :compact="compact"
+    :selection="selection"
+    :collapsible="collapsible"
     :collapsed-indices="collapsedIndices"
     @click-expand="toggleGroupCollapsed"
     @click-expand-all="toggleAllCollapsed"

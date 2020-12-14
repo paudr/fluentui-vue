@@ -108,6 +108,12 @@ export default {
         }
       }
     }
+  },
+  methods: {
+    updateModelValue (value) {
+      this.value = value
+      console.log(`@update:modelValue="${value}"`)
+    }
   }
 }
 </script>
@@ -126,7 +132,8 @@ export default {
         :auto-complete="autoComplete"
         :accent-insensitive="accentInsensitive"
         :open="open"
-        v-model="value"
+        :model-value="value"
+        @update:modelValue="updateModelValue"
         @click="open = !open"
       />
     </div>

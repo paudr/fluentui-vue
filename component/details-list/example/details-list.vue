@@ -88,6 +88,10 @@ export default {
           : 'SortDown'
         this.$forceUpdate()
       }
+    },
+    updateSelectedIndices (selectedIndices) {
+      this.selectedIndices = selectedIndices
+      console.log(`@update:selectedIndices="${selectedIndices}"`)
     }
   }
 }
@@ -127,7 +131,8 @@ export default {
       :data="currentData.data"
       :selection="selection"
       :collapsible="collapsible"
-      v-model:selectedIndices="selectedIndices"
+      :selected-indices="selectedIndices"
+      @update:selectedIndices="updateSelectedIndices"
       @click-header="handleClickHeader"
     />
   </div>

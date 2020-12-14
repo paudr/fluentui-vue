@@ -50,6 +50,6 @@ export default {
     :multiple="multiple"
     :marked-index="markedIndex"
     @keydown="handleKeydown"
-    @update:model-value="$emit('update:modelValue', $event)"
+    @update:modelValue="$emit('update:modelValue', $event)"
   />
 </template>

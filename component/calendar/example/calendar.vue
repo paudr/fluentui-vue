@@ -67,6 +67,10 @@ export default {
     }
   },
   methods: {
+    updateModelValue (value) {
+      this.selected = value
+      console.log(`@update:modelValue="${value}"`)
+    }
   }
 }
 </script>
@@ -80,6 +84,8 @@ export default {
         :first-day-of-the-week="firstDayOfTheWeek"
         :today="today"
         :go-today="goToday"
+        :model-value="selected"
+        @update:modelValue="updateModelValue"
         v-model="selected"
       />
     </div>

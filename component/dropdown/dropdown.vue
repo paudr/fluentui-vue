@@ -93,6 +93,7 @@ export default {
       }
     },
     handleUpdateValue (value) {
+      this.$emit('update:modelValue', value)
       this.markedIndex = -1
       if (!this.multiple) {
         this.open = false
@@ -105,9 +106,21 @@ export default {
 <template>
   <UncontrolledDropdown
     ref="dropdown"
-    v-bind="$props"
-    :selected-text="selectedText"
+    :label="label"
+    :description="description"
+    :invalid="invalid"
+    :error-message="errorMessage"
+    :disabled="disabled"
+    :required="required"
+    :borderless="borderless"
+    :underlined="underlined"
     :open="open && !disabled && !readonly"
+    :options="options"
+    :model-value="modelValue"
+    :selected-text="selectedText"
+    :placeholder="placeholder"
+    :readonly="readonly"
+    :multiple="multiple"
     :marked-index="markedIndex"
     @keydown="handleKeydown"
     @click="handleClick"

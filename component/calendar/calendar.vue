@@ -126,7 +126,13 @@ export default {
 
 <template>
   <UncontrolledCalendar
-    v-bind="$props"
+    :current-view="currentView"
+    :days="days"
+    :months="months"
+    :first-day-of-the-week="firstDayOfTheWeek"
+    :today="today"
+    :model-value="modelValue"
+    :go-today="goToday"
     :current-month="currentMonth"
     :current-year="currentYear"
     v-model:currentView="currentView"

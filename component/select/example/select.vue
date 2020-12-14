@@ -70,6 +70,12 @@ export default {
     highlightedIndex () {
       return Number(this.highlightedIndexText)
     }
+  },
+  methods: {
+    updateModelValue (value) {
+      this.value = value
+      console.log(`@update:modelValue="${value}"`)
+    }
   }
 }
 </script>
@@ -83,7 +89,8 @@ export default {
         :multiple="multiple"
         :disabled="disabled"
         :readonly="readonly"
-        v-model="value"
+        :model-value="value"
+        @update:modelValue="updateModelValue"
       />
     </div>
     <div class="props">
