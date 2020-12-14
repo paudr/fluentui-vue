@@ -70,9 +70,7 @@ export default {
   computed: {
     suggestedText () {
       const suggestedOption = this.options[this.suggestedIndex]
-      return suggestedOption
-        ? suggestedOption.text
-        : ''
+      return suggestedOption?.text ?? ''
     },
     autofillPlaceholder () {
       const { selectedText, placeholder } = this
@@ -142,13 +140,13 @@ export default {
     <button
       class="caret"
       :disabled="disabled"
-      @click="handleCaretClick"
+      @click.stop="handleCaretClick"
     >
       <span>
         <Icon
           class="icon"
           name="ChevronDown"
-          @click="handleCaretClick"
+          @click.stop="handleCaretClick"
         />
       </span>
     </button>

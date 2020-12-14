@@ -62,6 +62,6 @@ module.exports = () => ({
   devServer: {
     index: 'index.html',
     contentBase: path.resolve('app', 'assets'),
-    port: 8080
+    port: 8000
   }
 })

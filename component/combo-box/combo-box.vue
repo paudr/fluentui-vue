@@ -60,9 +60,7 @@ export default {
           : ''
       } else {
         const selected = options.find(option => option.value === modelValue)
-        return selected
-          ? selected.text
-          : ''
+        return selected?.text ?? ''
       }
     }
   },
