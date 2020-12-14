@@ -59,7 +59,7 @@ export default {
       <DataCell
         v-for="(column, colIndex) in columns"
         :key="colIndex"
-        :content="row[column.key || colIndex]"
+        :content="row[column.key || colIndex]?.toString()"
         :align="column.align"
       />
     </DetailsRow>

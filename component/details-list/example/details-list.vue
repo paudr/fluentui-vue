@@ -59,13 +59,13 @@ export default {
             ),
           data: Array(1000)
             .fill(0)
-            .map((_, i) => [`Item ${i}`, i.toString()])
+            .map((_, i) => [`Item ${i}`, i])
         },
         noGroups: {
           columns: [{ title: 'Name' }, { title: 'Value' }],
           data: Array(1000)
             .fill(0)
-            .map((_, i) => [`Item ${i}`, i.toString()])
+            .map((_, i) => [`Item ${i}`, i])
         }
       },
       selectedData: 'numbers',
