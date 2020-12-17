@@ -161,7 +161,9 @@ export default {
         }
       },
       set (value) {
-        if (this.hasFocus) {
+        if (!value) {
+          this.$emit('update:modelValue', null)
+        } else if (this.hasFocus) {
           this.$emit('update:modelValue', Number(value))
         } else {
           this.$emit('update:modelValue', this.parse(value))
