@@ -146,20 +146,26 @@ export default {
     'click'
   ],
   data () {
-    return {
-      hasFocus: false,
-      numberValue: this.modelValue
-    }
+    return { hasFocus: false }
   },
   computed: {
-    textValue () {
-      const { hasFocus, numberValue } = this
-      if (hasFocus) {
-        return typeof numberValue === 'number' && !isNaN(numberValue)
-          ? String(numberValue)
-          : ''
-      } else {
-        return this.stringify(numberValue)
+    textValue: {
+      get () {
+        const { hasFocus, modelValue } = this
+        if (hasFocus) {
+          return typeof modelValue === 'number' && !isNaN(modelValue)
+            ? String(modelValue)
+            : ''
+        } else {
+          return this.stringify(modelValue)
+        }
+      },
+      set (value) {
+        if (this.hasFocus) {
+          this.$emit('update:modelValue', Number(value))
+        } else {
+          this.$emit('update:modelValue', this.parse(value))
+        }
       }
     },
     textAlign () {
@@ -170,19 +176,24 @@ export default {
     }
   },
   methods: {
-    handleUpdateModelValue (value) {
-      if (!isNaN(value)) {
-        this.numberValue = value ? parseFloat(value) : ''
-        this.$emit('update:modelValue', this.numberValue)
-      } else {
-        this.$refs.textField.$refs.field.value = this.textValue
-      }
-    },
     handleFocus () {
       this.hasFocus = true
     },
     handleBlur () {
       this.hasFocus = false
+    },
+    handleKeyDown (event) {
+      const { target, key } = event
+      const allowedKeys = ['Backspace', 'Delete', 'Enter', 'Tab', 'Escape', 'ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown', 'Home', 'End']
+      if (!allowedKeys.includes(key)) {
+        const { value, selectionStart, selectionEnd } = target
+        const newValue = value.substring(0, selectionStart) + key + value.substring(selectionEnd)
+        if (isNaN(newValue)) {
+          event.preventDefault()
+          event.stopPropagation()
+          event.target.value = this.textValue
+        }
+      }
     }
   }
 }
@@ -209,11 +220,11 @@ export default {
     :maxlength="maxlength"
     :unresizable="unresizable"
     :auto-adjust-height="autoAdjustHeight"
-    :model-value="textValue"
-    @update:modelValue="handleUpdateModelValue"
+    v-model:model-value="textValue"
     @click="$emit('click')"
     @focus="handleFocus"
     @blur="handleBlur"
+    @keydown="handleKeyDown"
   />
 </template>
 
