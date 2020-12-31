@@ -7,6 +7,7 @@ import Dropdown from '../../../component/dropdown'
 const data = {
   colors: {
     columns: [
+      { title: 'Button', key: 'button', align: 'left', width: '125px' },
       { title: 'Name', key: 'name', align: 'left', width: '125px' },
       { title: 'Color', key: 'color', align: 'left' }
     ],
@@ -77,6 +78,11 @@ export default {
     currentData () {
       return data[this.selectedData]
     }
+  },
+  methods: {
+    alert (row) {
+      alert(row)
+    }
   }
 }
 </script>
@@ -114,7 +120,15 @@ export default {
       :data="currentData.data"
       :selection="selection"
       :collapsible="collapsible"
-    />
+      v-slot="slotProps"
+    >
+      <button
+        v-if="slotProps.column === 'button'"
+        @click="() => alert(slotProps.row)"
+      >
+        <span>Click me!</span>
+      </button>
+    </Control>
   </div>
 </template>
 

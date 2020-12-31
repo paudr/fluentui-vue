@@ -61,7 +61,22 @@ export default {
         :key="colIndex"
         :content="row[column.key || colIndex]?.toString()"
         :align="column.align"
-      />
+        :column="column.key || colIndex"
+        :row="startIndex + rowIndex"
+        v-slot="slotProps"
+      >
+        <!--
+          @slot Cell's content
+          @binding {string,number} column Column's key of the current cell.
+          @binding {number} row Row's index of the current cell.
+          @binding {string} content Content of the current cell.
+        -->
+        <slot
+          :column="slotProps.column"
+          :row="slotProps.row"
+          :content="slotProps.content"
+        />
+      </DataCell>
     </DetailsRow>
   </tbody>
 </template>

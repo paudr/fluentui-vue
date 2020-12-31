@@ -175,7 +175,20 @@ export default {
           :compact="compact"
           :collapsible="collapsible"
           @click-row="$emit('click-select-row', $event)"
-        />
+          v-slot="slotProps"
+        >
+          <!--
+            @slot Cell's content
+            @binding {string,number} column Column's key of the current cell.
+            @binding {number} row Row's index of the current cell.
+            @binding {string} content Content of the current cell.
+          -->
+          <slot
+            :column="slotProps.column"
+            :row="slotProps.row"
+            :content="slotProps.content"
+          />
+        </DataList>
       </template>
     </template>
     <DataList
@@ -189,7 +202,20 @@ export default {
       :compact="compact"
       :collapsible="collapsible"
       @click-row="$emit('click-select-row', $event)"
-    />
+      v-slot="slotProps"
+    >
+      <!--
+        @slot Cell's content
+        @binding {string,number} column Column's key of the current cell.
+        @binding {number} row Row's index of the current cell.
+        @binding {string} content Content of the current cell.
+      -->
+      <slot
+        :column="slotProps.column"
+        :row="slotProps.row"
+        :content="slotProps.content"
+      />
+    </DataList>
   </table>
 </template>
 

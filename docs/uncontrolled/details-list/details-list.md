@@ -26,4 +26,10 @@
 | click-select-group |            | Raised when the user clicks on a group row.         |
 | click-select-row   |            | Raised when the user clicks on a data row.          |
 
+## Slots
+
+| Name    | Description    | Bindings                                                                                                                                                                     |
+| ------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| default | Cell's content | **column** `string,number` - Column's key of the current cell.<br>**row** `number` - Row's index of the current cell.<br>**content** `string` - Content of the current cell. |
+
 ---
