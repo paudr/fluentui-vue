@@ -11,15 +11,16 @@
 | icon           | The name of the icon to use from the icon font.                                           | string  | -                | ''      |
 | iconColor      | The color for render Icon.                                                                | string  | -                | ''      |
 | mousestopDelay | Time in milliseconds that the mouse must be over the item to trigger the mousestop event. | number  | -                | 800     |
+| disabled       | Disabled state of the associated item.                                                    | boolean | -                | false   |
 
 ## Events
 
-| Event name       | Type | Description                                                                   |
-| ---------------- | ---- | ----------------------------------------------------------------------------- |
-| click-expand     |      | Raised when the user clicks on the expand button.                             |
-| mousestop-expand |      | Raised when the mouse is over the expand button for a certain amount of time. |
-| click            |      | Raised when the user clicks on the element.                                   |
-| mousestop        |      | Raised when the mouse is over the button for a certain amount of time.        |
+| Event name       | Properties | Description                                                                   |
+| ---------------- | ---------- | ----------------------------------------------------------------------------- |
+| click-expand     |            | Raised when the user clicks on the expand button.                             |
+| mousestop-expand |            | Raised when the mouse is over the expand button for a certain amount of time. |
+| click            |            | Raised when the user clicks on the element.                                   |
+| mousestop        |            | Raised when the mouse is over the button for a certain amount of time.        |
 
 ## Slots
 

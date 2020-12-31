@@ -36,9 +36,9 @@
 
 ## Events
 
-| Event name        | Type      | Description                                           |
-| ----------------- | --------- | ----------------------------------------------------- |
-| click             |           | Raised when the user clicks on the icon of TextField. |
-| update:modelValue | undefined | Raised when the value of TextField has been changed.  |
+| Event name        | Properties | Description                                           |
+| ----------------- | ---------- | ----------------------------------------------------- |
+| click             |            | Raised when the user clicks on the icon of TextField. |
+| update:modelValue |            | Raised when the value of TextField has been changed.  |
 
 ---

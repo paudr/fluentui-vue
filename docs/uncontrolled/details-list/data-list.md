@@ -15,8 +15,8 @@
 
 ## Events
 
-| Event name | Type | Description                                    |
-| ---------- | ---- | ---------------------------------------------- |
-| click-row  |      | Raised when the user clicks on a row selector. |
+| Event name | Properties | Description                                    |
+| ---------- | ---------- | ---------------------------------------------- |
+| click-row  |            | Raised when the user clicks on a row selector. |
 
 ---

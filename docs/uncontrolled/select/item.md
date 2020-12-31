@@ -14,8 +14,8 @@
 
 ## Events
 
-| Event name | Type | Description                              |
-| ---------- | ---- | ---------------------------------------- |
-| click      |      | Raised when the user clicks on the item. |
+| Event name | Properties | Description                              |
+| ---------- | ---------- | ---------------------------------------- |
+| click      |            | Raised when the user clicks on the item. |
 
 ---

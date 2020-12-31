@@ -23,10 +23,10 @@
 
 ## Events
 
-| Event name        | Type | Description                                                                 |
-| ----------------- | ---- | --------------------------------------------------------------------------- |
-| click             |      | Raised when the user clicks on the input element of the Dropdown.           |
-| keydown           |      | Raised when a key is pressed.                                               |
-| update:modelValue |      | Raised when an alteration to the Dropdown's value is committed by the user. |
+| Event name        | Properties | Description                                                                 |
+| ----------------- | ---------- | --------------------------------------------------------------------------- |
+| click             |            | Raised when the user clicks on the input element of the Dropdown.           |
+| keydown           |            | Raised when a key is pressed.                                               |
+| update:modelValue |            | Raised when an alteration to the Dropdown's value is committed by the user. |
 
 ---

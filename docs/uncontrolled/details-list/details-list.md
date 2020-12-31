@@ -17,13 +17,13 @@
 
 ## Events
 
-| Event name         | Type | Description                                         |
-| ------------------ | ---- | --------------------------------------------------- |
-| click-select-all   |      | Raised when the user clicks on the header row.      |
-| click-expand-all   |      | Raised when the user clicks on the header expander. |
-| click-header       |      | Raised when the user clicks on a column header.     |
-| click-expand       |      | Raised when the user clicks on a group expander.    |
-| click-select-group |      | Raised when the user clicks on a group row.         |
-| click-select-row   |      | Raised when the user clicks on a data row.          |
+| Event name         | Properties | Description                                         |
+| ------------------ | ---------- | --------------------------------------------------- |
+| click-select-all   |            | Raised when the user clicks on the header row.      |
+| click-expand-all   |            | Raised when the user clicks on the header expander. |
+| click-header       |            | Raised when the user clicks on a column header.     |
+| click-expand       |            | Raised when the user clicks on a group expander.    |
+| click-select-group |            | Raised when the user clicks on a group row.         |
+| click-select-row   |            | Raised when the user clicks on a data row.          |
 
 ---

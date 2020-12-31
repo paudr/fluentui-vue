@@ -14,9 +14,9 @@
 
 ## Events
 
-| Event name        | Type      | Description                                                                     |
-| ----------------- | --------- | ------------------------------------------------------------------------------- |
-| update:modelValue | undefined | Raised when an alteration to the Select field's value is committed by the user. |
-| keydown           | undefined | Raised when a key is pressed.                                                   |
+| Event name        | Properties | Description                                                                     |
+| ----------------- | ---------- | ------------------------------------------------------------------------------- |
+| update:modelValue |            | Raised when an alteration to the Select field's value is committed by the user. |
+| keydown           |            | Raised when a key is pressed.                                                   |
 
 ---

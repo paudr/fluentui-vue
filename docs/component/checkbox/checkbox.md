@@ -13,9 +13,9 @@
 
 ## Events
 
-| Event name           | Type      | Description                                                                               |
-| -------------------- | --------- | ----------------------------------------------------------------------------------------- |
-| update:modelValue    | undefined | Raised when an alteration to the CheckBox's value is committed by the user.               |
-| update:indeterminate | undefined | Raised when an alteration to the indeterminate CheckBox's value is committed by the user. |
+| Event name           | Properties | Description                                                                               |
+| -------------------- | ---------- | ----------------------------------------------------------------------------------------- |
+| update:modelValue    |            | Raised when an alteration to the CheckBox's value is committed by the user.               |
+| update:indeterminate |            | Raised when an alteration to the indeterminate CheckBox's value is committed by the user. |
 
 ---

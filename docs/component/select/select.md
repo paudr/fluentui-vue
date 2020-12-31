@@ -12,8 +12,8 @@
 
 ## Events
 
-| Event name        | Type | Description                                                                     |
-| ----------------- | ---- | ------------------------------------------------------------------------------- |
-| update:modelValue |      | Raised when an alteration to the Select field's value is committed by the user. |
+| Event name        | Properties | Description                                                                     |
+| ----------------- | ---------- | ------------------------------------------------------------------------------- |
+| update:modelValue |            | Raised when an alteration to the Select field's value is committed by the user. |
 
 ---

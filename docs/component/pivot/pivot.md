@@ -11,8 +11,8 @@
 
 ## Events
 
-| Event name        | Type | Description                           |
-| ----------------- | ---- | ------------------------------------- |
-| update:modelValue |      | Raised when the user clicks on a tab. |
+| Event name        | Properties | Description                           |
+| ----------------- | ---------- | ------------------------------------- |
+| update:modelValue |            | Raised when the user clicks on a tab. |
 
 ---

@@ -12,15 +12,16 @@
 | iconColor      | The color for render Icon.                                                                | string  | -                            | ''       |
 | iconSpace      | Whether the button must to reserve a space for Icon.                                      | boolean | -                            | false    |
 | mousestopDelay | Time in milliseconds that the mouse must be over the item to trigger the mousestop event. | number  | -                            | 800      |
+| disabled       | Disabled state of the associated item.                                                    | boolean | -                            | false    |
 
 ## Events
 
-| Event name       | Type | Description                                                                   |
-| ---------------- | ---- | ----------------------------------------------------------------------------- |
-| click            |      | Raised when the user clicks on the element.                                   |
-| click-expand     |      | Raised when the user clicks on the expand button.                             |
-| mousestop        |      | Raised when the mouse is over the button for a certain amount of time.        |
-| mousestop-expand |      | Raised when the mouse is over the expand button for a certain amount of time. |
+| Event name       | Properties | Description                                                                   |
+| ---------------- | ---------- | ----------------------------------------------------------------------------- |
+| click            |            | Raised when the user clicks on the element.                                   |
+| click-expand     |            | Raised when the user clicks on the expand button.                             |
+| mousestop        |            | Raised when the mouse is over the button for a certain amount of time.        |
+| mousestop-expand |            | Raised when the mouse is over the expand button for a certain amount of time. |
 
 ## Slots
 

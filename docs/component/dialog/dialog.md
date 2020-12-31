@@ -10,9 +10,9 @@
 
 ## Events
 
-| Event name | Type | Description                                      |
-| ---------- | ---- | ------------------------------------------------ |
-| click      |      | Raised when the user clicks on the close button. |
+| Event name | Properties | Description                                      |
+| ---------- | ---------- | ------------------------------------------------ |
+| click      |            | Raised when the user clicks on the close button. |
 
 ## Slots
 

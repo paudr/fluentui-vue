@@ -28,11 +28,11 @@
 
 ## Events
 
-| Event name        | Type | Description                                                                            |
-| ----------------- | ---- | -------------------------------------------------------------------------------------- |
-| input             |      | Raised when an alteration to the ComboBox's text field value is committed by the user. |
-| keydown           |      | Raised when a key is pressed.                                                          |
-| update:modelValue |      | Raised when an alteration to the ComboBox's value is committed by the user.            |
-| click             |      | Raised when the user clicks on the caret of the ComboBox.                              |
+| Event name        | Properties | Description                                                                            |
+| ----------------- | ---------- | -------------------------------------------------------------------------------------- |
+| input             |            | Raised when an alteration to the ComboBox's text field value is committed by the user. |
+| keydown           |            | Raised when a key is pressed.                                                          |
+| update:modelValue |            | Raised when an alteration to the ComboBox's value is committed by the user.            |
+| click             |            | Raised when the user clicks on the caret of the ComboBox.                              |
 
 ---

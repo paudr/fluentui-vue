@@ -23,8 +23,8 @@
 
 ## Events
 
-| Event name        | Type      | Description                                                                 |
-| ----------------- | --------- | --------------------------------------------------------------------------- |
-| update:modelValue | undefined | Raised when an alteration to the ComboBox's value is committed by the user. |
+| Event name        | Properties | Description                                                                 |
+| ----------------- | ---------- | --------------------------------------------------------------------------- |
+| update:modelValue |            | Raised when an alteration to the ComboBox's value is committed by the user. |
 
 ---

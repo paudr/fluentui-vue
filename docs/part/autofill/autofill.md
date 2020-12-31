@@ -14,9 +14,9 @@
 
 ## Events
 
-| Event name        | Type      | Description                                         |
-| ----------------- | --------- | --------------------------------------------------- |
-| update:modelValue | undefined | Raised when the value of Autofill has been changed. |
-| keydown           | undefined | Raised when a key is pressed.                       |
+| Event name        | Properties | Description                                         |
+| ----------------- | ---------- | --------------------------------------------------- |
+| update:modelValue |            | Raised when the value of Autofill has been changed. |
+| keydown           |            | Raised when a key is pressed.                       |
 
 ---

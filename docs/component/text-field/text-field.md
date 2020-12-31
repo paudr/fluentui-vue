@@ -25,12 +25,12 @@
 
 ## Events
 
-| Event name        | Type      | Description                                                 |
-| ----------------- | --------- | ----------------------------------------------------------- |
-| update:modelValue | undefined | Raised when the value of TextField has been changed.        |
-| change            |           | Raised when the user commits a value change to a TextField. |
-| focus             |           | Raised when the TextField has received focus                |
-| blur              |           | Raised when the TextField has lost focus                    |
-| click             |           | Raised when the user clicks on the icon of TextField.       |
+| Event name        | Properties | Description                                                 |
+| ----------------- | ---------- | ----------------------------------------------------------- |
+| update:modelValue |            | Raised when the value of TextField has been changed.        |
+| change            |            | Raised when the user commits a value change to a TextField. |
+| focus             |            | Raised when the TextField has received focus                |
+| blur              |            | Raised when the TextField has lost focus                    |
+| click             |            | Raised when the user clicks on the icon of TextField.       |
 
 ---

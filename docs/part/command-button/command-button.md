@@ -10,13 +10,14 @@
 | iconSpace      | Whether the button must to reserve a space for Icon.                                        | boolean | -      | false   |
 | expandIcon     | The name of the icon to use from the icon font.                                             | string  | -      | ''      |
 | mousestopDelay | Time in milliseconds that the mouse must be over the button to trigger the mousestop event. | number  | -      | 800     |
+| disabled       | Disabled state of the associated button.                                                    | boolean | -      | false   |
 
 ## Events
 
-| Event name   | Type | Description                                                            |
-| ------------ | ---- | ---------------------------------------------------------------------- |
-| click        |      | Raised when the user clicks on the element.                            |
-| click-expand |      | Raised when the user clicks on the expand icon.                        |
-| mousestop    |      | Raised when the mouse is over the button for a certain amount of time. |
+| Event name   | Properties | Description                                                            |
+| ------------ | ---------- | ---------------------------------------------------------------------- |
+| click        |            | Raised when the user clicks on the element.                            |
+| click-expand |            | Raised when the user clicks on the expand icon.                        |
+| mousestop    |            | Raised when the mouse is over the button for a certain amount of time. |
 
 ---

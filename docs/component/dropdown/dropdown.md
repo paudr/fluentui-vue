@@ -20,8 +20,8 @@
 
 ## Events
 
-| Event name        | Type      | Description                                                       |
-| ----------------- | --------- | ----------------------------------------------------------------- |
-| update:modelValue | undefined | Raised when the user clicks on the input element of the Dropdown. |
+| Event name        | Properties | Description                                                       |
+| ----------------- | ---------- | ----------------------------------------------------------------- |
+| update:modelValue |            | Raised when the user clicks on the input element of the Dropdown. |
 
 ---

@@ -16,9 +16,9 @@
 
 ## Events
 
-| Event name             | Type      | Description                                             |
-| ---------------------- | --------- | ------------------------------------------------------- |
-| update:selectedIndices | undefined | Raised when the user clicks select or unselect any row. |
-| click-header           |           | Raised when the user clicks on a column header.         |
+| Event name             | Properties | Description                                             |
+| ---------------------- | ---------- | ------------------------------------------------------- |
+| update:selectedIndices |            | Raised when the user clicks select or unselect any row. |
+| click-header           |            | Raised when the user clicks on a column header.         |
 
 ---

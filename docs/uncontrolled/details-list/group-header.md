@@ -15,9 +15,9 @@
 
 ## Events
 
-| Event name     | Type | Description                                  |
-| -------------- | ---- | -------------------------------------------- |
-| click-row      |      | Raised when the user clicks on the row.      |
-| click-expander |      | Raised when the user clicks on the expander. |
+| Event name     | Properties | Description                                  |
+| -------------- | ---------- | -------------------------------------------- |
+| click-row      |            | Raised when the user clicks on the row.      |
+| click-expander |            | Raised when the user clicks on the expander. |
 
 ---

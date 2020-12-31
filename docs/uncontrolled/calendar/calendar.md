@@ -16,13 +16,13 @@
 
 ## Events
 
-| Event name          | Type | Description                                         |
-| ------------------- | ---- | --------------------------------------------------- |
-| update:modelValue   |      | Raised when user selects a date.                    |
-| update:currentMonth |      | Raised when user selects a month.                   |
-| update:currentYear  |      | Raised when user selects a year.                    |
-| update:currentView  |      | Raised when the view was change by an user action.  |
-| navigate            |      | Raised when user make click in a navigation button. |
-| click-go-today      |      | 'Raised when user make click in a go today button.  |
+| Event name          | Properties | Description                                         |
+| ------------------- | ---------- | --------------------------------------------------- |
+| update:modelValue   |            | Raised when user selects a date.                    |
+| update:currentMonth |            | Raised when user selects a month.                   |
+| update:currentYear  |            | Raised when user selects a year.                    |
+| update:currentView  |            | Raised when the view was change by an user action.  |
+| navigate            |            | Raised when user make click in a navigation button. |
+| click-go-today      |            | 'Raised when user make click in a go today button.  |
 
 ---
