@@ -51,5 +51,24 @@ export default {
     :marked-index="markedIndex"
     @keydown="handleKeydown"
     @update:modelValue="$emit('update:modelValue', $event)"
-  />
+    v-slot="slotProps"
+  >
+    <!--
+      @slot Select's item.
+      @binding {object} option Option reference.
+      @binding {number} index Option's index.
+      @binding {boolean} selected Selected state of the option.
+      @binding {boolean} marked Marked state of the option.
+      @binding {boolean} highlighted Highlighted state of the option.
+      @binding {function} click Functio to select the option.
+    -->
+    <slot
+      :option="slotProps.option"
+      :index="slotProps.index"
+      :selected="slotProps.selected"
+      :marked="slotProps.marked"
+      :highlighted="slotProps.highlighted"
+      :click="slotProps.click"
+    />
+  </UncontrolledSelect>
 </template>
