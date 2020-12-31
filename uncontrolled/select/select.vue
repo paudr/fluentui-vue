@@ -131,19 +131,38 @@ export default {
     :tabindex="disabled ? '' : '0'"
     @keydown.stop.prevent="handleKeydown"
   >
-    <Item
-      v-for="(option, index) in options"
-      :ref="el => refItems.push(el)"
-      :key="index"
-      :type="option.type"
-      :text="option.text"
-      :multiple="multiple"
-      :disabled="disabled || option.disabled"
-      :selected="isValueSelected(option.value)"
-      :marked="index === markedIndex"
-      :highlighted="index === highlightedIndex"
-      @click="handleItemClick(index)"
-    />
+    <template v-for="(option, index) in options">
+      <!--
+        @slot Select's item.
+        @binding {object} option Option reference.
+        @binding {number} index Option's index.
+        @binding {boolean} selected Selected state of the option.
+        @binding {boolean} marked Marked state of the option.
+        @binding {boolean} highlighted Highlighted state of the option.
+        @binding {function} click Functio to select the option.
+      -->
+      <slot
+        :option="option"
+        :index="index"
+        :selected="isValueSelected(option.value)"
+        :marked="index === markedIndex"
+        :highlighted="index === highlightedIndex"
+        :click="() => handleItemClick(index)"
+      >
+        <Item
+          :ref="el => refItems.push(el)"
+          :key="index"
+          :type="option.type"
+          :text="option.text"
+          :multiple="multiple"
+          :disabled="disabled || option.disabled"
+          :selected="isValueSelected(option.value)"
+          :marked="index === markedIndex"
+          :highlighted="index === highlightedIndex"
+          @click="handleItemClick(index)"
+        />
+      </slot>
+    </template>
   </div>
 </template>
 

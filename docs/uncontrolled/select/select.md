@@ -19,4 +19,10 @@
 | update:modelValue |            | Raised when an alteration to the Select field's value is committed by the user. |
 | keydown           |            | Raised when a key is pressed.                                                   |
 
+## Slots
+
+| Name    | Description    | Bindings                                                                                                                                                                                                                                                                                                                |
+| ------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| default | Select's item. | **option** `object` - Option reference.<br>**index** `number` - Option's index.<br>**selected** `boolean` - Selected state of the option.<br>**marked** `boolean` - Marked state of the option.<br>**highlighted** `boolean` - Highlighted state of the option.<br>**click** `function` - Functio to select the option. |
+
 ---

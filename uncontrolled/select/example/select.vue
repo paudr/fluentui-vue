@@ -86,7 +86,19 @@ export default {
         :marked-index="markedIndex"
         :highlighted-index="highlightedIndex"
         v-model="value"
-      />
+        v-slot="slotProps"
+      >
+        <template v-if="slotProps.option.value === 'e'">
+          <div>
+            <button
+              :style="{ background: slotProps.selected ? 'blue' : '' }"
+              @click="slotProps.click"
+            >
+              <span>Option e</span>
+            </button>
+          </div>
+        </template>
+      </Control>
     </div>
     <div class="props">
       <div>
