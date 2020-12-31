@@ -11,6 +11,7 @@ export default {
       sampleData: {
         colors: {
           columns: [
+            { title: 'Button', key: 'button', align: 'left', width: '125px' },
             { title: 'Name', key: 'name', align: 'left', width: '125px', icon: 'SortDown' },
             { title: 'Color', key: 'color', align: 'left' }
           ],
@@ -134,7 +135,15 @@ export default {
       :selected-indices="selectedIndices"
       @update:selectedIndices="updateSelectedIndices"
       @click-header="handleClickHeader"
-    />
+      v-slot="slotProps"
+    >
+      <button
+        v-if="slotProps.column === 'button'"
+        @click="() => alert(slotProps.row)"
+      >
+        <span>Click me!</span>
+      </button>
+    </Control>
   </div>
 </template>
 
