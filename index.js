@@ -14,6 +14,7 @@ import NumberField from './component/number-field'
 import Overlay from './component/overlay'
 import Panel from './component/panel'
 import Pivot from './component/pivot'
+import SearchBox from './component/search-box'
 import Select from './component/select'
 import Spinner from './component/spinner'
 import TextField from './component/text-field'
@@ -35,6 +36,7 @@ const components = {
   Overlay,
   Panel,
   Pivot,
+  SearchBox,
   Select,
   Spinner,
   TextField
