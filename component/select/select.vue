@@ -35,6 +35,27 @@ export default {
         select.selectIndex(this.markedIndex)
         this.markedIndex = null
       }
+    },
+    handleSelect (index) {
+      const option = this.options[index]
+      if (option && (!option.type || option.type === 'option')) {
+        if (this.multiple) {
+          if (Array.isArray(this.modelValue)) {
+            const newValue = this.modelValue.includes(option.value)
+              ? this.modelValue.filter(value => value !== option.value)
+              : [...this.modelValue, option.value]
+            this.$emit('update:modelValue', newValue)
+          } else {
+            this.$emit('update:modelValue', [option.value])
+          }
+        } else {
+          const newValue = this.modelValue !== option.value
+            ? option.value
+            : null
+          this.open = false
+          this.$emit('update:modelValue', newValue)
+        }
+      }
     }
   }
 }
@@ -44,13 +65,13 @@ export default {
   <UncontrolledSelect
     ref="select"
     :options="options"
-    :model-value="modelValue"
+    :value="modelValue"
     :disabled="disabled"
     :readonly="readonly"
     :multiple="multiple"
     :marked-index="markedIndex"
     @keydown="handleKeydown"
-    @update:modelValue="$emit('update:modelValue', $event)"
+    @select="handleSelect"
     v-slot="slotProps"
   >
     <!--

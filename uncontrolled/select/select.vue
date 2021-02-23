@@ -7,7 +7,7 @@ export default {
     /** Collection of options for this select. */
     options: { type: Array, required: true },
     /** Value or Values of the selected items. */
-    modelValue: { type: undefined, default: undefined },
+    value: { type: undefined, default: undefined },
     /** Disabled state of the associated form field. */
     disabled: { type: Boolean, default: false },
     /** If true, the text field is readonly. */
@@ -20,8 +20,8 @@ export default {
     highlightedIndex: { type: Number, default: -1 }
   },
   emits: [
-    /** Raised when an alteration to the Select field's value is committed by the user. */
-    'update:modelValue',
+    /** Raised when user selects an item. */
+    'select',
     /** Raised when a key is pressed. */
     'keydown'
   ],
@@ -33,8 +33,8 @@ export default {
   },
   computed: {
     selectedIndices () {
-      const { multiple, modelValue, options } = this
-      const values = multiple ? modelValue : [modelValue]
+      const { multiple, value, options } = this
+      const values = multiple ? value : [value]
       const selectedIndices = []
       for (let index = 0; index < options.length; index += 1) {
         const option = options[index]
@@ -50,7 +50,7 @@ export default {
   },
   methods: {
     isValueSelected (value) {
-      const currentValue = this.multiple ? this.modelValue : [this.modelValue]
+      const currentValue = this.multiple ? this.value : [this.value]
       return Array.isArray(currentValue) &&
         currentValue.length > 0 &&
         currentValue.includes(value)
@@ -87,35 +87,21 @@ export default {
       const nextOptionItem = optionItems[nextOptionIndex]
       return this.refItems.indexOf(nextOptionItem)
     },
-    selectIndex (index) {
-      const option = this.options[index]
-      if (option && (!option.type || option.type === 'option')) {
-        this.selectValue(option.value)
-      }
-    },
-    selectValue (selectedValue) {
-      if (this.multiple) {
-        if (Array.isArray(this.modelValue)) {
-          if (this.modelValue.includes(selectedValue)) {
-            this.$emit('update:modelValue', this.modelValue.filter(value => value !== selectedValue))
-          } else {
-            this.$emit('update:modelValue', [...this.modelValue, selectedValue])
-          }
-        } else {
-          this.$emit('update:modelValue', [selectedValue])
-        }
-      } else if (this.modelValue !== selectedValue) {
-        this.$emit('update:modelValue', selectedValue)
-      }
-    },
     handleKeydown (event) {
       if (!this.disabled && !this.readonly) {
         this.$emit('keydown', event)
       }
     },
-    handleItemClick (index) {
-      if (!this.readonly) {
-        this.selectIndex(index)
+    handleClick (index) {
+      const option = this.options[index]
+      if (
+        !this.readonly &&
+        !this.disabled &&
+        option &&
+        !option.disabled &&
+        (!option.type || option.type === 'option')
+      ) {
+        this.$emit('select', index)
       }
     }
   },
@@ -167,7 +153,7 @@ export default {
           :selected="isValueSelected(option.value)"
           :marked="index === markedIndex"
           :highlighted="index === highlightedIndex"
-          @click="handleItemClick(index)"
+          @click="handleClick(index)"
         />
       </slot>
     </template>

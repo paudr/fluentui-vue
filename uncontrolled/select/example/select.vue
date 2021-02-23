@@ -70,6 +70,26 @@ export default {
     highlightedIndex () {
       return Number(this.highlightedIndexText)
     }
+  },
+  methods: {
+    handleSelect (index) {
+      const option = this.options[index]
+      if (option && (!option.type || option.type === 'option')) {
+        if (this.multiple) {
+          if (Array.isArray(this.value)) {
+            if (this.value.includes(option.value)) {
+              this.value = this.value.filter(value => value !== option.value)
+            } else {
+              this.value = [...this.value, option.value]
+            }
+          } else {
+            this.value = [option.value]
+          }
+        } else if (this.value !== option.value) {
+          this.value = option.value
+        }
+      }
+    }
   }
 }
 </script>
@@ -85,7 +105,8 @@ export default {
         :readonly="readonly"
         :marked-index="markedIndex"
         :highlighted-index="highlightedIndex"
-        v-model="value"
+        :value="value"
+        @select="handleSelect"
         v-slot="slotProps"
       >
         <template v-if="slotProps.option.value === 'e'">
