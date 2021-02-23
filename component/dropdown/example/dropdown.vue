@@ -30,7 +30,6 @@ export default {
   components: { Control, Checkbox, ChoiceGroup },
   data () {
     return {
-      open: false,
       options,
       vegetables,
       multiple: false,
@@ -84,11 +83,22 @@ export default {
         :placeholder="placeholder"
         :disabled="disabled"
         :readonly="readonly"
-        :open="open"
         :model-value="value"
         @update:modelValue="updateModelValue"
-        @click="open = !open"
-      />
+        v-slot="slotProps"
+      >
+        <template v-if="slotProps.option.value === 'e'">
+          <div>
+            <button
+              :style="{ background: slotProps.selected ? 'blue' : '' }"
+              :disabled="slotProps.disabled"
+              @click="slotProps.click"
+            >
+              <span>Option e</span>
+            </button>
+          </div>
+        </template>
+      </Control>
     </div>
     <div class="props">
       <div>

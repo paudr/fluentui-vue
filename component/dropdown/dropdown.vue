@@ -69,7 +69,7 @@ export default {
           this.markedIndex = select.getNextOptionIndex(this.markedIndex, -1)
           select.scrollToOption(this.markedIndex)
         } else if (code === 'Space' || code === 'Enter') {
-          select.selectIndex(this.markedIndex)
+          this.handleSelect(this.markedIndex)
         } else if (code.startsWith('Key')) {
           const index = select.options.findIndex(option =>
             option.text && equalInsensitive(option.text[0], key, true)
@@ -90,11 +90,26 @@ export default {
         this.open = !this.open
       }
     },
-    handleUpdateValue (value) {
-      this.$emit('update:modelValue', value)
+    handleSelect (index) {
       this.markedIndex = -1
-      if (!this.multiple) {
-        this.open = false
+      const option = this.options[index]
+      if (option && (!option.type || option.type === 'option')) {
+        if (this.multiple) {
+          if (Array.isArray(this.modelValue)) {
+            const newValue = this.modelValue.includes(option.value)
+              ? this.modelValue.filter(value => value !== option.value)
+              : [...this.modelValue, option.value]
+            this.$emit('update:modelValue', newValue)
+          } else {
+            this.$emit('update:modelValue', [option.value])
+          }
+        } else {
+          const newValue = this.modelValue !== option.value
+            ? option.value
+            : null
+          this.open = false
+          this.$emit('update:modelValue', newValue)
+        }
       }
     }
   }
@@ -114,7 +129,7 @@ export default {
     :underlined="underlined"
     :open="open && !disabled && !readonly"
     :options="options"
-    :model-value="modelValue"
+    :value="modelValue"
     :selected-text="selectedText"
     :placeholder="placeholder"
     :readonly="readonly"
@@ -122,6 +137,33 @@ export default {
     :marked-index="markedIndex"
     @keydown="handleKeydown"
     @click="handleClick"
-    @update:modelValue="handleUpdateValue"
-  />
+    @select="handleSelect"
+    v-slot="slotProps"
+  >
+    <!--
+      @slot Select's item.
+      @binding {object} option Option reference.
+      @binding {number} index Option's index.
+      @binding {string} type Option's type.
+      @binding {string} text Option's text.
+      @binding {boolean} multiple Multiple state of the select.
+      @binding {boolean} disabled Disable state of the option
+      @binding {boolean} selected Selected state of the option.
+      @binding {boolean} marked Marked state of the option.
+      @binding {boolean} highlighted Highlighted state of the option.
+      @binding {function} click Function to select the option.
+    -->
+    <slot
+      :option="slotProps.option"
+      :index="slotProps.index"
+      :type="slotProps.type"
+      :text="slotProps.text"
+      :multiple="slotProps.multiple"
+      :disabled="slotProps.disabled"
+      :selected="slotProps.selected"
+      :marked="slotProps.marked"
+      :highlighted="slotProps.highlighted"
+      :click="slotProps.click"
+    />
+  </UncontrolledDropdown>
 </template>
