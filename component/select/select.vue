@@ -57,14 +57,22 @@ export default {
       @slot Select's item.
       @binding {object} option Option reference.
       @binding {number} index Option's index.
+      @binding {string} type Option's type.
+      @binding {string} text Option's text.
+      @binding {boolean} multiple Multiple state of the select.
+      @binding {boolean} disabled Disable state of the option
       @binding {boolean} selected Selected state of the option.
       @binding {boolean} marked Marked state of the option.
       @binding {boolean} highlighted Highlighted state of the option.
-      @binding {function} click Functio to select the option.
+      @binding {function} click Function to select the option.
     -->
     <slot
       :option="slotProps.option"
       :index="slotProps.index"
+      :type="slotProps.type"
+      :text="slotProps.text"
+      :multiple="slotProps.multiple"
+      :disabled="slotProps.disabled"
       :selected="slotProps.selected"
       :marked="slotProps.marked"
       :highlighted="slotProps.highlighted"
