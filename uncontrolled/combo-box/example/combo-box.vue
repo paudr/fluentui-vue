@@ -163,7 +163,7 @@ export default {
           <div>
             <button
               :style="{ background: slotProps.selected ? 'blue' : '' }"
-              :disabled="slotProps.disabled"
+              :disabled="disabled || selectedOptions[slotProps.index].disabled"
               @click="slotProps.click"
             >
               <span>Option e</span>
