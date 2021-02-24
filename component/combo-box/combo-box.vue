@@ -65,6 +65,26 @@ export default {
     }
   },
   methods: {
+    selectOption (index) {
+      const option = this.options[index]
+      if (option && (!option.type || option.type === 'option')) {
+        if (this.multiple) {
+          if (Array.isArray(this.modelValue)) {
+            const newValue = this.modelValue.includes(option.value)
+              ? this.modelValue.filter(value => value !== option.value)
+              : [...this.modelValue, option.value]
+            this.$emit('update:modelValue', newValue)
+          } else {
+            this.$emit('update:modelValue', [option.value])
+          }
+        } else {
+          const newValue = this.modelValue !== option.value
+            ? option.value
+            : null
+          this.$emit('update:modelValue', newValue)
+        }
+      }
+    },
     handleKeydown (event) {
       const { select, autofill } = this.$refs.comboBox.$refs
       const { code } = event
@@ -80,14 +100,14 @@ export default {
         }
       } else if (code === 'Enter') {
         if (!this.allowFreeform || this.autoComplete) {
-          select.selectIndex(this.suggestedIndex)
+          this.handleSelect(this.suggestedIndex)
         } else if (this.allowFreeform) {
           const selectedIndex = this.options.findIndex(option =>
             (!option.type || option.type === 'option') &&
             !option.disabled &&
             equalInsensitive(option.text, autofill.$refs.field.value, this.accentInsensitive)
           )
-          select.selectIndex(selectedIndex)
+          this.handleSelect(selectedIndex)
         }
       }
     },
@@ -97,8 +117,8 @@ export default {
         this.$refs.comboBox.$refs.autofill.focus()
       }
     },
-    handleUpdateValue (event) {
-      this.$emit('update:modelValue', event)
+    handleSelect (index) {
+      this.selectOption(index)
       if (!this.multiple) {
         this.open = false
         this.suggestedIndex = -1
@@ -134,7 +154,7 @@ export default {
     :borderless="borderless"
     :underlined="underlined"
     :options="options"
-    :model-value="modelValue"
+    :value="modelValue"
     :readonly="readonly"
     :multiple="multiple"
     :allow-freeform="allowFreeform"
@@ -146,7 +166,34 @@ export default {
     :suggested-index="suggestedIndex"
     @keydown="handleKeydown"
     @click="handleClick"
-    @update:model-value="handleUpdateValue"
+    @select="handleSelect"
     @input="handleInput"
-  />
+    v-slot="slotProps"
+  >
+    <!--
+      @slot Select's item.
+      @binding {object} option Option reference.
+      @binding {number} index Option's index.
+      @binding {string} type Option's type.
+      @binding {string} text Option's text.
+      @binding {boolean} multiple Multiple state of the select.
+      @binding {boolean} disabled Disable state of the option
+      @binding {boolean} selected Selected state of the option.
+      @binding {boolean} marked Marked state of the option.
+      @binding {boolean} highlighted Highlighted state of the option.
+      @binding {function} click Function to select the option.
+    -->
+    <slot
+      :option="slotProps.option"
+      :index="slotProps.index"
+      :type="slotProps.type"
+      :text="slotProps.text"
+      :multiple="slotProps.multiple"
+      :disabled="slotProps.disabled"
+      :selected="slotProps.selected"
+      :marked="slotProps.marked"
+      :highlighted="slotProps.highlighted"
+      :click="slotProps.click"
+    />
+  </UncontrolledComboBox>
 </template>

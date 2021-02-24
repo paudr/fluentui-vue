@@ -75,6 +75,7 @@ export default {
       vegetables,
       accent,
       multiple: false,
+      loadingVisible: false,
       selectedData: 'options',
       textValue: '',
       selectedText: '',
@@ -89,7 +90,7 @@ export default {
   },
   computed: {
     selectedOptions () {
-      return this[this.selectedData]
+      return this[this.selectedData] || []
     },
     value: {
       get () {
@@ -113,6 +114,26 @@ export default {
     suggestedIndex () {
       return Number(this.suggestedIndexText)
     }
+  },
+  methods: {
+    handleSelect (index) {
+      const option = this.selectedOptions[index]
+      if (option && (!option.type || option.type === 'option')) {
+        if (this.multiple) {
+          if (Array.isArray(this.value)) {
+            if (this.value.includes(option.value)) {
+              this.value = this.value.filter(value => value !== option.value)
+            } else {
+              this.value = [...this.value, option.value]
+            }
+          } else {
+            this.value = [option.value]
+          }
+        } else if (this.value !== option.value) {
+          this.value = option.value
+        }
+      }
+    }
   }
 }
 </script>
@@ -133,9 +154,23 @@ export default {
         :auto-complete="autoComplete"
         :accent-insensitive="accentInsensitive"
         :open="open"
-        v-model="value"
+        :value="value"
+        @select="handleSelect"
         @click="open = !open"
-      />
+        v-slot="slotProps"
+      >
+        <template v-if="slotProps.option.value === 'e'">
+          <div>
+            <button
+              :style="{ background: slotProps.selected ? 'blue' : '' }"
+              :disabled="slotProps.disabled"
+              @click="slotProps.click"
+            >
+              <span>Option e</span>
+            </button>
+          </div>
+        </template>
+      </Control>
     </div>
     <div class="props">
       <div>

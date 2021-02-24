@@ -14,7 +14,7 @@
 | underlined        | Whether or not the associated form field is underlined.                                                                                                                                                                                         | boolean   | -      | false     |
 | open              | Whether or not the options of the dropdown are rendered.                                                                                                                                                                                        | boolean   | -      | false     |
 | options           | Collection of options for this combo box.                                                                                                                                                                                                       | array     | -      |           |
-| modelValue        | Value or Values of the selected items.                                                                                                                                                                                                          | undefined | -      | undefined |
+| value             | Value or Values of the selected items.                                                                                                                                                                                                          | undefined | -      | undefined |
 | selectedText      | Description text of the selected items.                                                                                                                                                                                                         | string    | -      | ''        |
 | readonly          | If true, the combo box is readonly.                                                                                                                                                                                                             | boolean   | -      | false     |
 | multiple          | Whether the combo box allow select more than one option.                                                                                                                                                                                        | boolean   | -      | false     |
@@ -28,11 +28,17 @@
 
 ## Events
 
-| Event name        | Properties | Description                                                                            |
-| ----------------- | ---------- | -------------------------------------------------------------------------------------- |
-| input             |            | Raised when an alteration to the ComboBox's text field value is committed by the user. |
-| keydown           |            | Raised when a key is pressed.                                                          |
-| update:modelValue |            | Raised when an alteration to the ComboBox's value is committed by the user.            |
-| click             |            | Raised when the user clicks on the caret of the ComboBox.                              |
+| Event name | Properties | Description                                                                            |
+| ---------- | ---------- | -------------------------------------------------------------------------------------- |
+| input      |            | Raised when an alteration to the ComboBox's text field value is committed by the user. |
+| keydown    |            | Raised when a key is pressed.                                                          |
+| select     |            | Raised when an user selects an item of dropdown's Select.                              |
+| click      |            | Raised when the user clicks on the caret of the ComboBox.                              |
+
+## Slots
+
+| Name    | Description    | Bindings                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| ------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| default | Select's item. | **option** `object` - Option reference.<br>**index** `number` - Option's index.<br>**type** `string` - Option's type.<br>**text** `string` - Option's text.<br>**multiple** `boolean` - Multiple state of the select.<br>**disabled** `boolean` - Disable state of the option<br>**selected** `boolean` - Selected state of the option.<br>**marked** `boolean` - Marked state of the option.<br>**highlighted** `boolean` - Highlighted state of the option.<br>**click** `function` - Function to select the option. |
 
 ---

@@ -35,7 +35,7 @@ export default {
     /** Collection of options for this combo box. */
     options: { type: Array, required: true },
     /** Value or Values of the selected items. */
-    modelValue: { type: undefined, default: undefined },
+    value: { type: undefined, default: undefined },
     /** Description text of the selected items. */
     selectedText: { type: String, default: '' },
     /** If true, the combo box is readonly. */
@@ -58,8 +58,8 @@ export default {
     loadingText: { type: String, default: '' }
   },
   emits: [
-    /** Raised when an alteration to the ComboBox's value is committed by the user. */
-    'update:modelValue',
+    /** Raised when an user selects an item of dropdown's Select. */
+    'select',
     /** Raised when a key is pressed. */
     'keydown',
     /** Raised when the user clicks on the caret of the ComboBox. */
@@ -156,12 +156,39 @@ export default {
         ref="select"
         class="select"
         :options="options"
-        :model-value="modelValue"
+        :value="value"
         :multiple="multiple"
         :marked-index="suggestedIndex"
-        @update:model-value="$emit('update:modelValue', $event)"
+        @select="$emit('select', $event)"
         @keydown="$emit('keydown', $event)"
-      />
+        v-slot="slotProps"
+      >
+        <!--
+          @slot Select's item.
+          @binding {object} option Option reference.
+          @binding {number} index Option's index.
+          @binding {string} type Option's type.
+          @binding {string} text Option's text.
+          @binding {boolean} multiple Multiple state of the select.
+          @binding {boolean} disabled Disable state of the option
+          @binding {boolean} selected Selected state of the option.
+          @binding {boolean} marked Marked state of the option.
+          @binding {boolean} highlighted Highlighted state of the option.
+          @binding {function} click Function to select the option.
+        -->
+        <slot
+          :option="slotProps.option"
+          :index="slotProps.index"
+          :type="slotProps.type"
+          :text="slotProps.text"
+          :multiple="slotProps.multiple"
+          :disabled="slotProps.disabled"
+          :selected="slotProps.selected"
+          :marked="slotProps.marked"
+          :highlighted="slotProps.highlighted"
+          :click="slotProps.click"
+        />
+      </UncontrolledSelect>
       <Spinner
         v-else
         class="spinner"

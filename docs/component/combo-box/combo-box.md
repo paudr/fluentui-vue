@@ -27,4 +27,10 @@
 | ----------------- | ---------- | --------------------------------------------------------------------------- |
 | update:modelValue |            | Raised when an alteration to the ComboBox's value is committed by the user. |
 
+## Slots
+
+| Name    | Description    | Bindings                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| ------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| default | Select's item. | **option** `object` - Option reference.<br>**index** `number` - Option's index.<br>**type** `string` - Option's type.<br>**text** `string` - Option's text.<br>**multiple** `boolean` - Multiple state of the select.<br>**disabled** `boolean` - Disable state of the option<br>**selected** `boolean` - Selected state of the option.<br>**marked** `boolean` - Marked state of the option.<br>**highlighted** `boolean` - Highlighted state of the option.<br>**click** `function` - Function to select the option. |
+
 ---

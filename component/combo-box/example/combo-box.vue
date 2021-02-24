@@ -135,7 +135,20 @@ export default {
         :model-value="value"
         @update:modelValue="updateModelValue"
         @click="open = !open"
-      />
+        v-slot="slotProps"
+      >
+        <template v-if="slotProps.option.value === 'e'">
+          <div>
+            <button
+              :style="{ background: slotProps.selected ? 'blue' : '' }"
+              :disabled="slotProps.disabled"
+              @click="slotProps.click"
+            >
+              <span>Option e</span>
+            </button>
+          </div>
+        </template>
+      </Control>
     </div>
     <div class="props">
       <div>
