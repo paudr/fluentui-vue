@@ -114,7 +114,7 @@ export default {
         v-slot="slotProps"
       >
         <!--
-          @slot Select's item.
+          @slot Dropdown's item.
           @binding {object} option Option reference.
           @binding {number} index Option's index.
           @binding {boolean} multiple Multiple state of the select.
