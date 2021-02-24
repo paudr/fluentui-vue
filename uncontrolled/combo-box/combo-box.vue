@@ -167,7 +167,6 @@ export default {
           @slot ComboBox's item.
           @binding {object} option Option reference.
           @binding {number} index Option's index.
-          @binding {boolean} multiple Multiple state of the select.
           @binding {boolean} selected Selected state of the option.
           @binding {boolean} marked Marked state of the option.
           @binding {boolean} highlighted Highlighted state of the option.
@@ -176,7 +175,6 @@ export default {
         <slot
           :option="slotProps.option"
           :index="slotProps.index"
-          :multiple="slotProps.multiple"
           :selected="slotProps.selected"
           :marked="slotProps.marked"
           :highlighted="slotProps.highlighted"

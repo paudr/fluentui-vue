@@ -29,8 +29,8 @@
 
 ## Slots
 
-| Name    | Description      | Bindings                                                                                                                                                                                                                                                                                                                                                                           |
-| ------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| default | ComboBox's item. | **option** `object` - Option reference.<br>**index** `number` - Option's index.<br>**multiple** `boolean` - Multiple state of the select.<br>**selected** `boolean` - Selected state of the option.<br>**marked** `boolean` - Marked state of the option.<br>**highlighted** `boolean` - Highlighted state of the option.<br>**click** `function` - Function to select the option. |
+| Name    | Description      | Bindings                                                                                                                                                                                                                                                                                                                 |
+| ------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| default | ComboBox's item. | **option** `object` - Option reference.<br>**index** `number` - Option's index.<br>**selected** `boolean` - Selected state of the option.<br>**marked** `boolean` - Marked state of the option.<br>**highlighted** `boolean` - Highlighted state of the option.<br>**click** `function` - Function to select the option. |
 
 ---

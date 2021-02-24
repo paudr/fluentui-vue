@@ -122,7 +122,6 @@ export default {
         @slot Select's item.
         @binding {object} option Option reference.
         @binding {number} index Option's index.
-        @binding {boolean} multiple Multiple state of the select.
         @binding {boolean} selected Selected state of the option.
         @binding {boolean} marked Marked state of the option.
         @binding {boolean} highlighted Highlighted state of the option.
@@ -131,7 +130,6 @@ export default {
       <slot
         :option="option"
         :index="index"
-        :multiple="multiple"
         :selected="isValueSelected(option.value)"
         :marked="index === markedIndex"
         :highlighted="index === highlightedIndex"
