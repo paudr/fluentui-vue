@@ -1,0 +1,60 @@
+@import "../../theme/mixin.less";
+@import "../../theme/typography.less";
+@import "../../theme/color.less";
+
+.tagPicker::v-deep(.fieldGroup) {
+  min-height: 32px;
+  height: auto;
+}
+
+.field {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 180px;
+  min-height: 30px;
+  border: 0;
+}
+
+.itemsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.autofill {
+  flex: 1 1 0px;
+  height: 32px;
+  padding: 0px 6px;
+  align-self: flex-end;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  .fontStyleMedium();
+  color: @neutralPrimary;
+  text-overflow: ellipsis;
+}
+
+.tagPicker::v-deep(.dropdown) {
+  .normalize();
+  background-color: @white;
+  width: 100%;
+  max-width: 100%;
+}
+
+.dropdownWrapper {
+  flex: 1 1 0px;
+  background-color: @white;
+  box-shadow: 0 0px 15px -5px @blackTranslucent40;
+  border: 1px solid @neutralLight;
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.spinner {
+  padding: 20px 0px;
+}

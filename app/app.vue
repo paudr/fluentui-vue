@@ -26,6 +26,7 @@ import UncontrolledComboBox from '../uncontrolled/combo-box/example'
 import UncontrolledDetailsList from '../uncontrolled/details-list/example'
 import UncontrolledDropdown from '../uncontrolled/dropdown/example'
 import UncontrolledSelect from '../uncontrolled/select/example'
+import UncontrolledTagPicker from '../uncontrolled/tag-picker/example'
 
 import Autofill from '../part/autofill/example'
 import ComboField from '../part/combo-field/example'
@@ -62,7 +63,8 @@ const uncontrolled = {
   UncontrolledComboBox,
   UncontrolledDetailsList,
   UncontrolledDropdown,
-  UncontrolledSelect
+  UncontrolledSelect,
+  UncontrolledTagPicker
 }
 
 const part = {

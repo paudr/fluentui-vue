@@ -1,0 +1,96 @@
+@import "../../theme/typography.less";
+@import "../../theme/color.less";
+
+div {
+  .fontStyleMedium();
+  position: relative;
+  box-sizing: content-box;
+  flex-shrink: 1;
+  margin: 2px;
+  height: 26px;
+  line-height: 26px;
+  cursor: default;
+  display: flex;
+  flex-wrap: nowrap;
+  max-width: 300px;
+  min-width: 0px;
+  color: @neutralPrimary;
+  user-select: none;
+  outline: transparent;
+  background: @neutralLighter;
+
+  > span {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 30px;
+    margin: 0px 8px;
+    overflow: hidden;
+  }
+
+  > button {
+    position: relative;
+    .fontStyleMedium();
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    padding: 0px 4px;
+    width: 30px;
+    height: 100%;
+    background-color: transparent;
+    color: @neutralSecondary;
+    user-select: none;
+    outline: transparent;
+    border: 0px none transparent;
+    text-decoration: none;
+    border-radius: 0px 2px 2px 0px;
+    flex: 0 0 auto;
+
+    &:hover {
+      color: @neutralPrimary;
+      background: @neutralQuaternaryAlt;
+    }
+
+    > span {
+      display: flex;
+      height: 100%;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &:hover {
+    color: @neutralDark;
+    background: @neutralLight;
+  }
+
+  &:focus {
+    background: @themePrimary;
+    color: @white;
+
+    button {
+      color: @white;
+
+      &:hover {
+        background: @themeDark;
+      }
+    }
+  }
+
+  &.disabled .item,
+  &.disabled .item > button {
+    cursor: default;
+    pointer-events: none;
+    background: @neutralLight;
+  }
+}
+
+.itemIcon {
+  font-size: @iconFontSizeSmall;
+  margin: 0px 4px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  flex-shrink: 0;
+}
