@@ -131,6 +131,7 @@ export default {
     :selection="selection"
     :collapsible="collapsible"
     :collapsed-indices="collapsedIndices"
+    @click-header="$emit('click-header', $event)"
     @click-expand="toggleGroupCollapsed"
     @click-expand-all="toggleAllCollapsed"
     @click-select-row="toggleSelectedRow"
