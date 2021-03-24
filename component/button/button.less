@@ -1,0 +1,214 @@
+@import "../../theme/color.less";
+@import "../../theme/typography.less";
+
+.button {
+  .fontStyleMedium();
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+  height: 32px;
+  min-width: 80px;
+  padding: 0 16px;
+  color: @neutralPrimary;
+  background-color: @white;
+  border: 1px solid @neutralSecondaryAlt;
+  user-select: none;
+  outline: transparent;
+  text-decoration: none;
+  border-radius: 2px;
+
+  &:hover {
+    background-color: @neutralLighter;
+    color: @neutralDark;
+  }
+
+  &.checked,
+  &:active {
+    background-color: @neutralLight;
+    color: @neutralDark;
+  }
+
+  > span {
+    display: flex;
+    height: 100%;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.textContainer {
+  flex-grow: 1;
+  display: block;
+}
+
+.label {
+  display: block;
+  margin: 0px 4px;
+  line-height: 100%;
+  font-weight: @fontWeightSemibold;
+}
+
+.description {
+  display: block;
+  font-size: @fontSizeSmall;
+  font-weight: @fontWeightRegular;
+  line-height: 100%;
+  color: @neutralSecondary;
+}
+
+.icon {
+  font-size: @iconFontSizeMedium;
+  margin: 0px 4px;
+  height: @iconFontSizeMedium;
+  line-height: @iconFontSizeMedium;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.button.action {
+  padding: 0px 4px;
+  height: 40px;
+  color: @black;
+  background-color: transparent;
+  border-color: transparent;
+
+  .icon {
+    color: @themeDarkAlt;
+  }
+
+  &.checked .icon {
+    color: @themeDarker;
+  }
+
+  .label {
+    font-weight: @fontWeightRegular;
+  }
+
+  &:hover {
+    color: @themePrimary;
+  }
+}
+
+.button.command {
+  padding-top: 0px 4px;
+  height: 44px;
+  min-width: 40px;
+  border-width: 0px;
+  text-decoration: none;
+
+  &.checked:hover {
+    background-color: @neutralQuaternaryAlt;
+  }
+
+  .icon {
+    color: @themePrimary;
+  }
+
+  .label {
+    font-weight: @fontWeightRegular;
+  }
+
+  &:hover {
+    color: @themePrimary;
+  }
+}
+
+.button.compound {
+  padding: 16px 12px;
+  max-width: 280px;
+  min-height: 72px;
+  height: auto;
+
+  > span {
+    align-items: flex-start;
+  }
+
+  .textContainer {
+    text-align: left;
+  }
+
+  .label {
+    margin: 0px;
+    margin-bottom: 5px;
+  }
+}
+
+.button.icon {
+  padding: 0px 4px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  background-color: transparent;
+  color: @themePrimary;
+  border-width: 0px;
+
+  &:hover {
+    color: @themeDarkAlt;
+    background-color: @neutralLighter;
+  }
+
+  &.checked,
+  &:active {
+    color: @themeDark;
+    background-color: @neutralLight;
+  }
+
+  &.checked:hover {
+    color: @themeDark;
+    background-color: @neutralQuaternaryAlt;
+  }
+}
+
+.button.primary {
+  color: @white;
+  background-color: @themePrimary;
+  border-color: @themePrimary;
+
+  .icon,
+  .description {
+    color: @white;
+  }
+
+  &:hover {
+    background-color: @themeDarkAlt;
+    border-color: @themeDarkAlt;
+  }
+
+  &:active {
+    background-color: @themeDark;
+    border-color: @themeDark;
+  }
+
+  &.checked {
+    background-color: @themeDark;
+    border-color: @themePrimary;
+  }
+}
+
+.button[disabled] {
+  &,
+  &:active,
+  &:hover {
+    cursor: default;
+    background-color: @neutralLighter;
+    color: @neutralTertiary;
+    border-color: @neutralLighter;
+  }
+
+  .description {
+    color: @neutralTertiary;
+  }
+
+  .icon {
+    color: @neutralTertiaryAlt;
+  }
+
+  &.command,
+  &.action {
+    border-color: @white;
+    background-color: @white;
+  }
+}
