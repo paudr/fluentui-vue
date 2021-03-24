@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "standard",
+    "plugin:vue/essential",
+    "plugin:vue/vue3-strongly-recommended"
+  ],
+  "env": {
+    "browser": true
+  }
+}
