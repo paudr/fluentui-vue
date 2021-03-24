@@ -1,8 +1,10 @@
+import Checkbox from './component/checkbox'
 import Icon from './component/icon'
 import Label from './component/label'
 import Spinner from './component/spinner'
 
 const components = {
+  Checkbox,
   Icon,
   Label,
   Spinner

@@ -1,0 +1,132 @@
+@import "../../theme/mixin.less";
+@import "../../theme/color.less";
+@import "../../theme/typography.less";
+
+@transitionDuration: 200ms;
+@transitionTiming: cubic-bezier(0.4, 0, 0.23, 1);
+
+.checkbox {
+  .fontStyleMedium();
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  line-height: normal;
+
+  .box {
+    .normalize();
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+    transition-property: background, border, border-color;
+    transition-duration: @transitionDuration;
+    transition-timing-function: @transitionTiming;
+    margin-right: 4px;
+    border: 1px solid @neutralPrimary;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .icon {
+    opacity: 0;
+    color: @white;
+  }
+
+  .label {
+    .fontStyleMedium();
+    color: @neutralPrimary;
+    line-height: 20px;
+    margin-left: 4px;
+  }
+
+  &.checked {
+    .box {
+      background: @themePrimary;
+      border-color: @themePrimary;
+    }
+
+    .icon {
+      opacity: 1;
+    }
+  }
+
+  &.indeterminate {
+    .box {
+      border-color: @themePrimary;
+    }
+
+    .box::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: 4px;
+      left: 4px;
+      box-sizing: border-box;
+      transition-property: border-width, border, border-color;
+      transition-duration: @transitionDuration;
+      transition-timing-function: @transitionTiming;
+      border-radius: 2px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: @themePrimary;
+    }
+
+    &:not(.disabled):hover .box,
+    &:not(.disabled):hover .box::after {
+      border-color: @themeDark;
+    }
+  }
+
+  &.disabled {
+    cursor: default;
+
+    .box {
+      border-color: @neutralTertiaryAlt;
+    }
+
+    &.checked .box {
+      background: @neutralTertiaryAlt;
+      border-color: @neutralTertiaryAlt;
+    }
+
+    .label {
+      color: @neutralTertiary;
+    }
+
+    &.indeterminate .box,
+    &.indeterminate .box::after {
+      border-color: @neutralTertiaryAlt;
+    }
+  }
+
+  &:not(.indeterminate):not(.disabled):not(.checked):hover .icon {
+    color: @neutralSecondary;
+    opacity: 1;
+  }
+
+  &:not(.disabled).checked:hover .box {
+    background: @themeDark;
+    border-color: @themeDark;
+  }
+
+  &.boxSideEnd {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+
+    .box {
+      margin-left: 4px;
+      margin-right: 0px;
+    }
+
+    .label {
+      margin-left: 0px;
+      margin-right: 4px;
+    }
+  }
+}
