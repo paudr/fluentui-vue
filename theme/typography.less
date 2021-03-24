@@ -1,0 +1,83 @@
+@textFont: "Segoe UI WestEuropean", "Segoe UI", -apple-system,
+  BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+@iconFont: FabricMDL2Icons;
+
+@fontSizeMini: 10px;
+@fontSizeXSmall: 10px;
+@fontSizeSmall: 12px;
+@fontSizeSmallPlus: 12px;
+@fontSizeMedium: 14px;
+@fontSizeMediumPlus: 16px;
+@fontSizeIcon: 16px;
+@fontSizeLarge: 18px;
+@fontSizeXLarge: 20px;
+@fontSizeXLargePlus: 24px;
+@fontSizeXXLarge: 28px;
+@fontSizeXXLargePlus: 32px;
+@fontSizeSuperLarge: 42px;
+@fontSizeMega: 68px;
+
+@fontWeightLight: 100;
+@fontWeightSemilight: 300;
+@fontWeightRegular: 400;
+@fontWeightSemibold: 600;
+@fontWeightBold: 700;
+
+@iconFontSizeXSmall: 10px;
+@iconFontSizeSmall: 12px;
+@iconFontSizeMedium: 16px;
+@iconFontSizeLarge: 20px;
+
+.fontStyle(@family; @size; @weight) {
+  font-family: @family;
+  font-size: @size;
+  font-weight: @weight;
+}
+
+.fontStyleTiny(@family: @textFont; @size: @fontSizeMini; @weight: @fontWeightRegular) {
+  .fontStyle(@family; @size; @weight);
+}
+
+.fontStyleXSmall(@family: @textFont; @size: @fontSizeXSmall; @weight: @fontWeightRegular) {
+  .fontStyle(@family; @size; @weight);
+}
+
+.fontStyleSmall(@family: @textFont; @size: @fontSizeSmall; @weight: @fontWeightRegular) {
+  .fontStyle(@family; @size; @weight);
+}
+
+.fontStyleSmallPlus(@family: @textFont; @size: @fontSizeSmallPlus; @weight: @fontWeightRegular) {
+  .fontStyle(@family; @size; @weight);
+}
+
+.fontStyleMedium(@family: @textFont; @size: @fontSizeMedium; @weight: @fontWeightRegular) {
+  .fontStyle(@family; @size; @weight);
+}
+
+.fontStyleMediumPlus(@family: @textFont; @size: @fontSizeMediumPlus; @weight: @fontWeightRegular) {
+  .fontStyle(@family; @size; @weight);
+}
+
+.fontStyleLarge(@family: @textFont; @size: @fontSizeLarge; @weight: @fontWeightRegular) {
+  .fontStyle(@family; @size; @weight);
+}
+
+.fontStyleXLarge(@family: @textFont; @size: @fontSizeXLarge; @weight: @fontWeightSemibold) {
+  .fontStyle(@family; @size; @weight);
+}
+
+.fontStyleXLargePlus(@family: @textFont; @size: @fontSizeXLargePlus; @weight: @fontWeightSemibold) {
+  .fontStyle(@family; @size; @weight);
+}
+
+.fontStyleXXLarge(@family: @textFont; @size: @fontSizeXXLarge; @weight: @fontWeightSemibold) {
+  .fontStyle(@family; @size; @weight);
+}
+
+.fontStyleSuperLarge(@family: @textFont; @size: @fontSizeSuperLarge; @weight: @fontWeightSemibold) {
+  .fontStyle(@family; @size; @weight);
+}
+
+.fontStyleMega(@family: @textFont; @size: @fontSizeMega; @weight: @fontWeightSemibold) {
+  .fontStyle(@family; @size; @weight);
+}
