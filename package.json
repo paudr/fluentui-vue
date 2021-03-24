@@ -7,6 +7,9 @@
     "type": "git",
     "url": "https://github.com/frikeldon/fluentui-vue.git"
   },
+  "dependencies": {
+    "vue": "^3.0.7"
+  },
   "devDependencies": {
     "eslint": "^7.22.0",
     "eslint-config-standard": "^16.0.2",
