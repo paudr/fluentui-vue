@@ -1,0 +1,27 @@
+@import "../../theme/mixin.less";
+@import "../../theme/typography.less";
+@import "../../theme/color.less";
+
+label {
+  .normalize();
+  .fontStyleMedium(@weight: @fontWeightSemibold);
+  color: @neutralPrimary;
+  box-sizing: border-box;
+  display: block;
+  padding: 5px 0px;
+  overflow-wrap: break-word;
+}
+
+.disabled {
+  color: @neutralTertiary;
+}
+
+.required::after {
+  content: " *";
+  color: @redDark;
+  padding-right: 12px;
+}
+
+.disabled.required::after {
+  color: @neutralTertiary;
+}

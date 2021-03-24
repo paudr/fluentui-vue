@@ -1,7 +1,9 @@
 import Icon from './component/icon'
+import Label from './component/label'
 
 const components = {
-  Icon
+  Icon,
+  Label
 }
 
 export default {
